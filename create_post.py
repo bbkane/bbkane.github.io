@@ -82,7 +82,7 @@ def main():
         with open(post_path, 'w') as post:
             write = lambda s: print(s, file=post) # flake8: noqa
             write('---')
-            write('layout: post')
+            write('layout: default')
             write('title: ' + args.post_name)
             write('---')
             write('')
