@@ -1,8 +1,7 @@
 ---
 layout: default
+title: Recent Blog Posts
 ---
-
-# Recent Blog Posts
 
 {% for post in site.posts %}
 [{{ post.title }}]({{ post.url }})

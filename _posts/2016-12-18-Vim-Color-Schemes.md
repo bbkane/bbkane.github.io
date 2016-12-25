@@ -81,7 +81,7 @@ I've also come across a few plugins that add many colorschemes at once!
 
 That last NeoVim specific plugin can be wrapped in an `if` block:
 
-```
+```vim
 if has('nvim')
     Plug 'Soares/base16.nvim'
 endif

@@ -22,7 +22,7 @@ def retire(principal, num_years, rate):
 
 Running it yields the expected values:
 
-```
+```python
 retire(1000, 65 - 25, .07)
 Out[2]: 213609.56982787763
 
@@ -32,7 +32,7 @@ Out[3]: 101073.04136640529
 
 What happens if I increase the principal? For kicks, let's increase it to 10000.
 
-```
+```python
 retire(10000, 65 - 25, .07)
 Out[4]: 2136095.698278777
 retire(10000, 65 - 35, .07)

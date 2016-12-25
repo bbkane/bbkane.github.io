@@ -5,7 +5,7 @@ title: BASH Logging Function
 
 This is a small BASH logging function to record the output of a command:
 
-```BASH
+```bash
 function logit {
     today=$(date +%Y-%m-%d.%H.%M)
     "$@" > >(tee "$1".stdout."$today".log) 2> >(tee "$1".stderr."$today".log >&2)

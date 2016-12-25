@@ -61,7 +61,7 @@ The problems with this is obvious. Look at that nesting! I'd be halfway across
 the screen before I got anything done! However, this pattern can be abstracted
 into a function.
 
-```
+```python
 def find_or_none(node, taglist):
     for tag in taglist:
         node = node.find(tag)
