@@ -52,7 +52,7 @@ endtry
 
 Likewise, `termguicolors` can be detected using an `if` block:
 
-```
+```vim
 " Linux has termguicolors but it ruins the colors...
 if has('termguicolors') && (has('mac') || has('win32'))
     set termguicolors
@@ -109,7 +109,7 @@ startup to do things. I prefix all such environmental variables with `vim_`, so
 `vim_colorscheme` is the variable I chose. I use the `try/catch` block described
 earlier to catch and handle errors.
 
-```
+```vim
 " Try to use a colorscheme plugin
 " but fallback to a default one
 try
