@@ -1,0 +1,19 @@
+Vagrant.configure(2) do |config|
+    config.vm.define "node1" do |node1|
+        node1.vm.box = "centos/7"
+        config.vm.synced_folder '.', '/vagrant', disabled: true
+        # CentOS hack: https://github.com/mitchellh/vagrant/issues/6154
+        config.vm.synced_folder ".", "/home/vagrant/sync", disabled: true
+        config.vm.network "forwarded_port", guest: 80, host: 8080
+        node1.vm.hostname = "node1"
+        # For logging in through Putty, use username vagrant, password vagrant
+        config.vm.provision "file", source: "bootstrap.sh", destination: "bootstrap.sh"
+        config.vm.provider "virtualbox" do |vb|
+          # Display the VirtualBox GUI when booting the machine
+          vb.gui = true
+        
+          # Customize the amount of memory on the VM:
+          vb.memory = "4096"
+        end
+    end
+end
