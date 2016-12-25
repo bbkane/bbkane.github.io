@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: Setting Up PowerShell Updated
 ---
 
@@ -7,7 +7,7 @@ I've streamlined and improved my method of installing PowerShell:
 
 First, run the `cmd` script as Administrator to install [chocolatey](https://chocolatey.org/)
 and PowerShell version 4, and allow powershell scripts to be run.
-The current version of the script lives at 
+The current version of the script lives at
 [my backup repo](https://github.com/bbkane/backup/blob/master/windows/install_choco.cmd)
 
 ```cmd
@@ -27,7 +27,7 @@ goto check_Permissions
 	exit
     )
 
-    
+
 :install
 
 @powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin

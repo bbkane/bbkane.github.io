@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: On Errors in Repeated Functions
 ---
 
@@ -77,7 +77,7 @@ this punted error handling, the code becomes:
 this2 = find_or_none(root, ['this', 'this2'])
 if this2 is not None:
     for entry  in this2.findall('entry')
-        first_thing = entry.text 
+        first_thing = entry.text
         next_entries = entry.find('this3')
         if next_entries is not None:
             for ...

@@ -1,9 +1,9 @@
 ---
-layout: post
+layout: default
 title: Wallpapers From Reddit
 ---
 
-A while back, I found a nice [script](https://github.com/nagracks/reddit_get_top_images) to download wallpapers from Reddit. 
+A while back, I found a nice [script](https://github.com/nagracks/reddit_get_top_images) to download wallpapers from Reddit.
 It originally only downloaded wallpapers from one subreddit at a time, so I made a [fork](https://github.com/bbkane/reddit_get_top_images)
 to handle multiple subreddits and use a JSON configuration file (the multiple subreddits feature has since been merged into master).
 

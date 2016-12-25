@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: MySQL To File
 ---
 
@@ -12,7 +12,7 @@ mysql -u <username> --password='<password>' <database_name> -vvv < <path/to/file
 ```
 
 The `-vvv` is the verboseness of the command and is optional,
-the `<` is a redirection from a file, and the `>` redirects from stdout to another file. 
+the `<` is a redirection from a file, and the `>` redirects from stdout to another file.
 
 For example:
 
@@ -23,7 +23,7 @@ mysql -u bkane --password='im_totes_secure' books_db -vvv < ./work.mysql > ./out
 prints the commands in `work.mysql` to `output.txt`. If you just want the output to the terminal, leave off the `> <path/to/output_file>`.
 
 
-This is the easiest way. *Note that using the bare password on the command line is 
+This is the easiest way. *Note that using the bare password on the command line is
 [insecure](http://unix.stackexchange.com/questions/78734/why-shouldnt-someone-use-passwords-in-the-command-line).*
 You probably shouldn't use this at work.
 

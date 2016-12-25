@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: SQLite3 Conveniences
 ---
 
@@ -52,30 +52,30 @@ SELECT * FROM my_table;
 #### sqlite3 shell
 
 ```sql
-sqlite> .read commands.sql             
-.read commands.sql                     
-.echo on                               
-.headers on                            
-.mode column                           
-                                       
-DROP TABLE my_table;                   
-                                       
-CREATE TABLE my_table                  
-(                                      
-    my_variable INT,                   
-    my_other VARCHAR(20)               
-);                                     
-                                       
+sqlite> .read commands.sql
+.read commands.sql
+.echo on
+.headers on
+.mode column
+
+DROP TABLE my_table;
+
+CREATE TABLE my_table
+(
+    my_variable INT,
+    my_other VARCHAR(20)
+);
+
 INSERT INTO my_table VALUES (1, 'one');
 INSERT INTO my_table VALUES (2, 'two');
-                                       
-SELECT * FROM my_table;                
-my_variable  my_other                  
------------  ----------                
-1            one                       
-2            two                       
-                                       
-sqlite>                                
+
+SELECT * FROM my_table;
+my_variable  my_other
+-----------  ----------
+1            one
+2            two
+
+sqlite>
 ```
 
 Like the nice table at the bottom with column lables and nicely separated fields?

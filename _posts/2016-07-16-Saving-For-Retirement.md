@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: Saving For Retirement
 ---
 
@@ -62,7 +62,7 @@ $$S_n = P(R + R^2 + ... + R^n)$$
 
 $$S_n = P\sum_{1}^{n}R^n$$
 
-So, as we can see, `P` really does simply multiply against the rate. 
+So, as we can see, `P` really does simply multiply against the rate.
 That sum is known as a [geometric series](https://en.wikipedia.org/wiki/Geometric_series),
  and we can reduce it to the following formula:
 
@@ -94,13 +94,13 @@ Out[15]: 101073.04136640551
 ```
 
 There are differences between the two methods way after the decimal place,
-but those are occurring because of 
+but those are occurring because of
 [floating point rounding errors](https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html).
 
 From a programming perspective, `retire_math` (`O(constant)` time) should be a lot faster than `retire` (`O(n)` time),
 but it is a lot less readable as well. For our use case it doesn't matter because both versions are fast enough.
 
-`retire_math` also suffers in that it's input `rate` cannot be `0`, but `retire` can have a `0` input. 
+`retire_math` also suffers in that it's input `rate` cannot be `0`, but `retire` can have a `0` input.
 
 
 I'm out of time, but I want to look more at and expand this function. Some things I'd like to play with:

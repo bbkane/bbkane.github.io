@@ -1,9 +1,9 @@
 ---
-layout: post
+layout: default
 title: Removing Passwords from a Git Repo
 ---
 
-When googling how to remove passwords from a git repository, 
+When googling how to remove passwords from a git repository,
 I found [this very helpful link](http://www.davidverhasselt.com/git-how-to-remove-your-password-from-a-repository/).
 
 It was so helpful, I turned it into the following Python script:
