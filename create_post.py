@@ -60,6 +60,9 @@ def main():
                         help="Number of seconds per check. Ex: 1")
     parser.add_argument('-e', '--editor', default=EDITOR,
                         help="Editor to open new post in. Must be added to path. Ex: vim")
+    parser.add_argument('-d', '--date',
+                        default=datetime.datetime.today().strftime('%Y-%m-%d'),
+                        help="date of the post (of the form YYYY-MM-DD). Defaults to current date")
     args = parser.parse_args()
     if not args.post_name:
         args.post_name = input("Enter the name of your post to create: ")
@@ -73,7 +76,7 @@ def main():
             os.rmdir(dir_path)
 
     # jekyllify filename and create with layout info
-    today = datetime.datetime.today().strftime('%Y-%m-%d')
+    today = args.date
     post_title = today + '-' + args.post_name.replace(' ', '-')
     post_dir = p_join(args.root, args.post_root)
     post_path = p_join(post_dir, post_title + '.md')

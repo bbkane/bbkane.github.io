@@ -18,7 +18,7 @@ $PSVersionTable.PSVersion
 
 You should see a small text table with your version number. Like this:
 ![]({{ site.baseurl }}/img/2015-02-23-Setting-Up-PowerShell/Windows_PowerShell_2015-02-22_22-52-54.png)
-If the “Major” field in that table is “4”, then you have the most up-to-date version (as of 2014-02-22). If not, and on Windows 7, this is probably the case, you will need to update it.
+If the “Major” field in that table is “4”, then you have the most up-to-date version (as of 2015-02-22). If not, and on Windows 7, this is probably the case, you will need to update it.
 
 There are a couple ways of updating PowerShell. The most common way is to go through Microsoft’s website, but, in keeping with my prerogative to use the command line for everything, I’m going to show you how to update it through a Powershell utility named Chocolatey. Chocolatey is a third-party command line *package manager* for Windows. *Package manager* means it will install applications for you.
 

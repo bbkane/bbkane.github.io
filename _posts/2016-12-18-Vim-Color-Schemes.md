@@ -65,14 +65,25 @@ to work with Vim, but... I haven't.
 # Colorscheme Plugins!
 
 I used the builtin `elflord` colorscheme for quite a while, and I still do
-occasionally, but here are some colorscheme plugins I really like (TODO: get pictures):
+occasionally, but here are some colorscheme plugins I really like:
 
 - [jellybeans](https://github.com/nanotech/jellybeans.vim)
+![]({{ site.baseurl }}/img/2016-12-18-Vim-Color-Schemes/jellybeans.png)
+
 - [molokai](https://github.com/tomasr/molokai)
+![]({{ site.baseurl }}/img/2016-12-18-Vim-Color-Schemes/molokai.png)
+
 - [dracula](https://github.com/dracula/vim)
+![]({{ site.baseurl }}/img/2016-12-18-Vim-Color-Schemes/dracula.png)
+
 - [railscasts](https://github.com/jpo/vim-railscasts-theme)
+![]({{ site.baseurl }}/img/2016-12-18-Vim-Color-Schemes/railscasts.png)
+
 - [desert-warm-256](https://github.com/rainux/vim-desert-warm-256)
+![]({{ site.baseurl }}/img/2016-12-18-Vim-Color-Schemes/desert-warm-256.png)
+
 - [gruvbox](https://github.com/morhetz/gruvbox)
+![]({{ site.baseurl }}/img/2016-12-18-Vim-Color-Schemes/gruvbox.png)
 
 I've also come across a few plugins that add many colorschemes at once!
 
