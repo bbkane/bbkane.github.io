@@ -36,7 +36,10 @@ def main():
     else:
         raise SystemExit("Platform not supported")
 
-    find_str = "find . -type f -exec {sed_program} -i -e 's/{first_word}/{second_word}/g' {{}} \;"
+    {% comment %}Need to escape the double quotes below {% endcomment %}
+    {% raw %}
+    find_str = r"find . -type f -exec {sed_program} -i -e 's/{first_word}/{second_word}/g' {{}} \;"
+    {% endraw %}
     find_str = find_str.format(sed_program=sed_program,
                                first_word=first_word,
                                second_word=second_word)

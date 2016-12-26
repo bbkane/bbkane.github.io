@@ -5,49 +5,6 @@
 
 // https://github.com/pages-themes/midnight/blob/master/_sass/jekyll-theme-midnight.scss#L227
 section {
-  max-width:650px;
-  padding: 30px 0px 50px 0px;
-  margin: 20px 0;
-  // bbkane: Don't need this because I'm getting rid of the View On Github thing
-  // margin-top: 70px;
-
-  #title {
-    border: 0;
-    outline: none;
-    margin: 0 0 50px 0;
-    padding: 0 0 5px 0;
-
-    h1 {
-      font-family: 'OpenSansLight', "Helvetica Neue", Helvetica, Arial, sans-serif;
-      font-weight: normal;
-      font-size: 40px;
-      text-align: center;
-      line-height: 36px;
-    }
-
-    p {
-      color: #d7cfbe;
-      font-family: 'OpenSansLight', "Helvetica Neue", Helvetica, Arial, sans-serif;
-      font-weight: normal;
-      font-size: 18px;
-      text-align: center;
-    }
-
-    .credits {
-      font-size: 11px;
-      font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif;
-      font-weight: normal;
-      color: #696969;
-      margin-top: -10px;
-
-      &.left {
-        float: left;
-      }
-
-      &.right {
-        float: right;
-      }
-    }
-
-  }
+  // bbkane: Don't need his margin because I'm getting rid of the View On Github thing
+  margin-top: 0
 }
