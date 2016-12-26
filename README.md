@@ -31,7 +31,7 @@ https://github.com/jch/html-pipeline#dependencies
 -------------------------------------------------
 ```
 
-- From a VM, serve with the IP of `0.0.0.0` so the site will be reachable from the host.
+- From a VM, use the `-H, --host` option with the IP of `0.0.0.0` so the site will be reachable from the host.
 
 ```
 bundle exec jekyll serve --host 0.0.0.0
@@ -39,4 +39,5 @@ bundle exec jekyll serve --host 0.0.0.0
 
 - Go to the site: http://127.0.0.1:4000/
 
-- Possibly use the `--watch` option to rebuild the site on file changes.
+- Possibly use the `-w, --watch` option to rebuild the site on file changes.
+- Possibly use the `-D, --drafts` option to serve posts in the `_drafts` folder.

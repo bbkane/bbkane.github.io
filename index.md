@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Recent Blog Posts
+title: Ben's Corner
 ---
 
 {% for post in site.posts %}
