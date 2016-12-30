@@ -1,10 +1,25 @@
 ---
 ---
 
+// The name of the game here is to overwrite stuff from https://github.com/pages-themes/midnight/blob/master/_sass/jekyll-theme-midnight.scss
+// with the settings I want
+
 @import "{{ site.theme }}";
+
+// TODO: change to percent if it doesn't break stuff
+$blog-max-width: 800px;
 
 // https://github.com/pages-themes/midnight/blob/master/_sass/jekyll-theme-midnight.scss#L227
 section {
-  // bbkane: Don't need his margin because I'm getting rid of the View On Github thing
-  margin-top: 0
+    // bbkane: Don't need his margin because I'm getting rid of the View On Github thing
+    max-width: $blog-max-width;
+    margin-top: 0
+}
+
+.wrapper {
+    max-width: $blog-max-width;
+}
+
+nav {
+    max-width: $blog-max-width;
 }
