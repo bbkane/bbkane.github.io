@@ -11,7 +11,7 @@ Before we begin, know that Vim, NeoVim, and the various terminals they work with
 can be finicky with colors. On Windows, I'm using
 [neovim-qt](https://github.com/equalsraf/neovim-qt). On Mac, I'm using MacVim
 or iTerm2 with NeoVim. On Linux I'm using LXTerminal on Ubuntu 16.04 with
-NeoVim. The following notes with with my setup.
+NeoVim. The following notes with my setup.
 
 There are a couple of notes to keep in mind when using colorschemes:
 
@@ -168,7 +168,7 @@ nice list of colorschemes. One note: when I use tab completion to
 auto-complete the command `set_vim_colorscheme` itself, I have to type SPACE
 before TAB to convince BASH that the colorscheme is ready for completion.
 
-With graceful feature usage, lot of colorschemes, and the ability to switch them
+With graceful feature usage, many colorschemes, and the ability to switch them
 easily from inside Vim and outside Vim, my sense of style is satisfied and my
 ability to procrastinate is enhanced.
 
