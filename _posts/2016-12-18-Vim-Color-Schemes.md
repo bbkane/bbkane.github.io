@@ -20,8 +20,9 @@ There are a couple of notes to keep in mind when using colorschemes:
   [documentation](https://github.com/morhetz/gruvbox/wiki/Terminal-specific)
 - Sometimes (on Windows/Mac, but oddly not on my Linux) `termguicolors` should
   be set. See `:help termguicolors` for more information
-- Your background can be light or dark and many colorschemes with adjust. I
-  universally prefer a dark background so I always `set background=dark`.
+- Your background can be light or dark and many colorschemes will adjust. I
+  universally prefer a dark terminal so I always `set background=dark` to
+  inform Vim about my dark background.
 
 Because I work on several servers/VMs that don't have NeoVim or
 [vim-plug](https://github.com/junegunn/vim-plug) installed, or all the features
