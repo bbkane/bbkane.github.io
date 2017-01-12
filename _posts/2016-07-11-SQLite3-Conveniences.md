@@ -80,3 +80,15 @@ sqlite>
 
 Like the nice table at the bottom with column lables and nicely separated fields?
 I do too.
+
+### Errata
+
+I want to write somewhere an easy inner join to find records with duplicate
+columns. It doesn't really fit into this post, so here it is on the bottom.
+
+```sql
+SELECT mt1.name 
+FROM 
+    my_table AS mt1
+    JOIN my_table as mt2 ON mt1.name = mt2.name AND mt1.id != mt2.id
+```
