@@ -2,7 +2,17 @@ from collections import namedtuple
 from enum import Enum
 from statistics import mean
 
-import matplotlib.pyplot as plt
+using_bokeh = True
+using_matplotlib = True
+try:
+    from bokeh.plotting import figure, output_file, show
+except ImportError:
+    using_bokeh = False
+
+try:
+    import matplotlib.pyplot as plt
+except ImportError:
+    using_matplotlib = False
 
 
 class Orientation(Enum):
@@ -51,7 +61,16 @@ def plot_matplotlib(rect, doodle_triangles):
 
 def plot_bokeh(rect, doodle_triangles):
     # http://bokeh.pydata.org/en/latest/docs/user_guide/plotting.html#patch-glyphs
-    pass
+    output_file("triangle.html")
+    plot = figure(plot_width=400, plot_height=400)
+    xs = []
+    ys = []
+    for triangle in doodle_triangles:
+        xs.append([p.x for p in triangle])
+        ys.append([p.y for p in triangle])
+    plot.patches(xs, ys)
+    show(plot)
+    # if this doesn't show, refresh the page
 
 
 def main():
@@ -61,7 +80,10 @@ def main():
     # or orientation is > 3 and orientation is right
     # Is this matplotlib or my function?
     doodle_triangles = make_doodle_coords(Orientation.right, rect, depth=4)
-    plot_matplotlib(rect, doodle_triangles)
+    if using_matplotlib:
+        plot_matplotlib(rect, doodle_triangles)
+    elif using_bokeh:
+        plot_bokeh(rect, doodle_triangles)
 
 
 if __name__ == "__main__":
