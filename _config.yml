@@ -1,3 +1,7 @@
 theme: jekyll-theme-midnight
 title: Ben's Corner
 google_analytics: UA-89444199-1
+collections:
+    apidocs:
+        output: true
+        # permalink: /:collection/:path/:title:output_ext
