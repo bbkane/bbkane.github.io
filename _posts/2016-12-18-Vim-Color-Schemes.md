@@ -174,3 +174,5 @@ easily from inside Vim and outside Vim, my sense of style is satisfied and my
 ability to procrastinate is enhanced.
 
 I keep my Vim/NeoVim configurations on [GitHub](https://github.com/bbkane/nvim).
+
+This blog post is now on [Reddit](https://www.reddit.com/r/vim/comments/5mfl8g/vim_color_schemes/)!
