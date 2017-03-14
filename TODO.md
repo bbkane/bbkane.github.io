@@ -17,6 +17,11 @@ title: TODO
 - Typescript
 - Ansible
 - D
+- Scheme (The Little Schemer)
+- Machine Learning
+- Stats
+- Investing
+- Spanish
 
 # Projects
 
@@ -35,4 +40,10 @@ title: TODO
 - stuff from notes on phone
 - short stories
 - Write analysis of Christen's quarters game (repo on Mac)
+- Backup server to consolidaate data and rsync scripts to keep it that way
 
+# Resources
+- PDFs
+- Firefox Bookmarks
+- Safari Books Online
+- YouTube
