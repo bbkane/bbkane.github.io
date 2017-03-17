@@ -3,6 +3,8 @@ layout: default
 title: TODO
 ---
 
+Also see the note on my phone
+
 # To Learn
 
 - CCNA
@@ -31,6 +33,7 @@ title: TODO
 - C++ data structures (see Github for a list)
 - Java Game (LibGDX)
 - Ansible + Vim + Language Setup
+- Arch / Linux From Scratch
 
 # Blog Posts
 
