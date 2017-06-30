@@ -7,6 +7,8 @@ Sometimes it's useful to change a folder's setting so multiple users can access 
 
 Here's how I do that. After this, all members of the group `apache` will be able to create files and directories under `/var/www/html` and those files and directories will retain group permissions.
 
+TODO: Merge [this StackOverflow link](https://stackoverflow.com/a/6448326/2958070) to get a better process.
+
 ```bash
 # Do all of this as root
 # add myself to apache group
@@ -23,4 +25,3 @@ getfacl -R /var/www > /var/www/permissions.facl
 chgrp -R apache /var/www/html/
 chmod -R u+rwx,g+rws /var/www/html
 ```
-
