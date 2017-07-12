@@ -23,5 +23,5 @@ youtube-dl --download-archive downloaded.txt --no-post-overwrites --max-download
 - Use `rsync` to push the songs (your Android's IP will probably be different, just check the output from SSHelper)
 
 ```bash
-rsync -rvz  -e 'ssh -p 2222' . 192.168.1.66:/sdcard/Music/
+rsync -rvh --progress --stats  -e 'ssh -p 2222' . 192.168.1.66:/sdcard/Music/
 ```
