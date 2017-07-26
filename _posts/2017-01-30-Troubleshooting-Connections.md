@@ -178,4 +178,12 @@ SQL with the following command modified from
 tshark -r <name>.pcap -T fields -e mysql.query
 ```
 
+Alternatively, you could capture the queries in real time by modifying the command slightly:
+
+```
+tshark -i <interface> -T fields -e mysql.query
+```
+
 Then analyze away!
+
+
