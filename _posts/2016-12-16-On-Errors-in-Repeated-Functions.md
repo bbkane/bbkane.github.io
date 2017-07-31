@@ -118,3 +118,5 @@ including a functional approach to this this (and other) problems.
 Rust also has a [monadic approach](http://www.codethatgrows.com/lessons-learned-from-rust-the-result-monad/) to error handling.
 After I read/watch this stuff again, I'll probably be ashamed of this post, but until then, it's up :)
 
+Update: I still find this useful for some things, but XML handling is best handled by XSLT! Use XSLT!
+

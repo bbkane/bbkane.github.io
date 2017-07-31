@@ -18,10 +18,27 @@ usermod -a -G apache bbkane
 # backup permissions for the folders I'm about to change
 # If this goes wrong (recursive commands are dangerous), we can use this
 # file to restore those permissions
+# See https://unix.stackexchange.com/a/189158/185953
 getfacl -R /var/www > /var/www/permissions.facl
 
 # change the group to apache so anybody in that group can edit these files
 # and add the sticky bit to anything created under /var/www is also owned by apache
-chgrp -R apache /var/www/html/
-chmod -R u+rwx,g+rws /var/www/html
+# See https://stackoverflow.com/a/6448326/2958070
+cd /var/www/html/
+chgrp -R groupname .
+chmod -R g+rwX .
+find . -type d -exec chmod g+s '{}' +
+
+# To change it back, restore from the permissions saved earlier
+# (I haven't actually had to test this yet)
+cd /var/www
+setfacl --restore=permissions.facl
 ```
+
+In addition, if it's a git repo that you're sharing on a server, you should change the following config value:
+
+```
+git config core.sharedRepository group
+```
+
+to make git create group owned files instead of user owned ones.
