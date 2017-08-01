@@ -6,6 +6,9 @@ My blog
 
 Follow the [Github instructions](https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/), but use the following information:
 
+
+This breaks on ruby-2.4.0. Use rvm and ruby-2.3.3 instead.
+
 ### Ubuntu 16.04 (my VM)
 
 - Make sure the right port is forwarded to the host in the Vagrantfile before boot:
