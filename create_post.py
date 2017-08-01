@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+from __future__ import print_function
+
 """
 create_post.py
 
@@ -92,17 +94,9 @@ def main():
     else:
         print(post_path, 'already created.')
 
+    # I don't want to actually open the editor because if it command line, it blocks the rest of the script
     if args.editor:
-        try:
-            retcode = subprocess.call([args.editor, post_path], shell=False)
-            if retcode != 0:
-                print("Child was terminated by signal", retcode, file=sys.stderr)
-            else:
-                print(args.editor, 'opened', post_path, 'successfully')
-        except OSError as e:
-            print("Execution failed:", e, file=sys.stderr)
-    else:
-        print('No editor found. configure $EDITOR or use `--editor` flag')
+        print("\n",' '* 8, args.editor, " ", post_path)
 
     # create post_img_dir
     post_img_dir = p_join(img_dir, post_title)
