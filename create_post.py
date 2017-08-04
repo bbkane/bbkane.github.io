@@ -10,6 +10,12 @@ Author: Benjamin Kane
 License: MIT
 """
 
+DESCRIPTION = """\
+Create a blog post and associated image directory,
+then poll the image directory for new images, convert any found to img links,
+and finally copy the new link to the clipboard for pastability
+"""
+
 from os.path import join as p_join
 import argparse
 import datetime
@@ -22,9 +28,9 @@ import shutil
 try:
     import pyperclip
 except ImportError:
-    use_pyperclip = False
+    PYPERCLIP_INSTALLED = False
 else:
-    use_pyperclip = True
+    PYPERCLIP_INSTALLED = True
 
 
 # the path where this script resides
@@ -37,6 +43,8 @@ POST_ROOT = '_posts'
 default_editor = os.getenv('EDITOR')
 if default_editor and shutil.which(default_editor):
     EDITOR = default_editor
+elif shutil.which('editor'):
+    EDITOR = 'editor'
 elif shutil.which('code'):
     EDITOR = 'code'
 elif shutil.which('nvim'):
@@ -48,7 +56,7 @@ else:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Easily add image links to a jekyll site")
+    parser = argparse.ArgumentParser(description=DESCRIPTION)
     parser.add_argument('post_name', default=None, nargs='?',
                         help="Name of Post. Ex: 'My Awesome Post'. \
                         If not provided, the script will prompt for it")
@@ -65,7 +73,16 @@ def main():
     parser.add_argument('-d', '--date',
                         default=datetime.datetime.today().strftime('%Y-%m-%d'),
                         help="date of the post (of the form YYYY-MM-DD). Defaults to current date")
+    parser.add_argument('-ni', '--no-images', action='store_true',
+                        help="Don't poll the image dir for new images to convert to blog post links")
     args = parser.parse_args()
+
+    # Handle control+c nicely
+    import signal
+    def exit_(signum, frame):
+        raise SystemExit('\nExiting...\n')
+    signal.signal(signal.SIGINT, exit_)
+
     if not args.post_name:
         args.post_name = input("Enter the name of your post to create: ")
 
@@ -94,39 +111,41 @@ def main():
     else:
         print(post_path, 'already created.')
 
-    # I don't want to actually open the editor because if it command line, it blocks the rest of the script
+    # I don't want to actually open the editor because if it's command line, it blocks the rest of the script!
     if args.editor:
-        print("\n",' '* 8, args.editor, " ", post_path, "\n")
+        print("Copy-paste the following to open the post:")
+        print("\n",' '* 8, args.editor, post_path, "\n")
 
     # create post_img_dir
     post_img_dir = p_join(img_dir, post_title)
-    print('Creating new image dir:', post_img_dir)
-    os.makedirs(post_img_dir, exist_ok=True)
 
-    if use_pyperclip:
-        print('Watching', post_img_dir, 'for changes to make links from them. Ctrl-C quits.')
-        # keep checking post_img_dir for changes
-        img_list = set(os.listdir(post_img_dir))
-        while True:
-            time_start = time.time()
-            new_img_list = set(os.listdir(post_img_dir))
+    if not args.no_images:
+        print('Creating new image dir:', post_img_dir)
+        os.makedirs(post_img_dir, exist_ok=True)
+        if PYPERCLIP_INSTALLED:
+            print('Watching', post_img_dir, 'for changes to make links from them. Ctrl-C quits.')
+            # keep checking post_img_dir for changes
+            img_list = set(os.listdir(post_img_dir))
+            while True:
+                time_start = time.time()
+                new_img_list = set(os.listdir(post_img_dir))
 
-            # make new files in the dir into links for clipboard
-            if new_img_list != img_list:
-                links_to_create = new_img_list - img_list
-                for img in links_to_create:
-                    parts = ('![]({{ site.baseurl }}', args.image_root, post_title, img+')')
-                    link = '/'.join(parts)
-                    print('Copying link to clipboard:', link)
-                    pyperclip.copy(link)
-                img_list = new_img_list
+                # make new files in the dir into links for clipboard
+                if new_img_list != img_list:
+                    links_to_create = new_img_list - img_list
+                    for img in links_to_create:
+                        parts = ('![]({{ site.baseurl }}', args.image_root, post_title, img+')')
+                        link = '/'.join(parts)
+                        print('Copying link to clipboard:', link)
+                        pyperclip.copy(link)
+                    img_list = new_img_list
 
-            # sleep until we need to refresh
-            duration = time.time() - time_start
-            if duration < args.refresh_rate:
-                time.sleep(args.refresh_rate - duration)
-    else:
-        print("Install pyperclip for clipboard support")
+                # sleep until we need to refresh
+                duration = time.time() - time_start
+                if duration < args.refresh_rate:
+                    time.sleep(args.refresh_rate - duration)
+        else:
+            print("Install pyperclip for clipboard support")
 
 
 if __name__ == '__main__':
