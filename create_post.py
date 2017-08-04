@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 from __future__ import print_function
@@ -96,7 +96,7 @@ def main():
 
     # I don't want to actually open the editor because if it command line, it blocks the rest of the script
     if args.editor:
-        print("\n",' '* 8, args.editor, " ", post_path)
+        print("\n",' '* 8, args.editor, " ", post_path, "\n")
 
     # create post_img_dir
     post_img_dir = p_join(img_dir, post_title)
