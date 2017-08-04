@@ -111,10 +111,20 @@ def main():
     else:
         print(post_path, 'already created.')
 
-    # I don't want to actually open the editor because if it's command line, it blocks the rest of the script!
+    # Opening the editor blocks the rest of the script if it's a terminal app,
+    # so only open it if we're not using images
     if args.editor:
         print("Copy-paste the following to open the post:")
         print("\n",' '* 8, args.editor, post_path, "\n")
+        if args.no_images:
+            try:
+                retcode = subprocess.call([args.editor, post_path], shell=False)
+                if retcode != 0:
+                    print("Child was terminated by signal", retcode, file=sys.stderr)
+                else:
+                    print(args.editor, 'opened', post_path, 'successfully')
+            except OSError as e:
+                print("Execution failed:", e, file=sys.stderr)
 
     # create post_img_dir
     post_img_dir = p_join(img_dir, post_title)
