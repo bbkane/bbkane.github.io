@@ -23,3 +23,19 @@ section {
 nav {
     max-width: $blog-max-width;
 }
+
+// It's time for some color swaps to make this look better!
+a {
+    color: #f46242;
+}
+
+body {
+    background: rgb(4, 6, 20);
+    // used mostly for <p>
+    color: rgb(232, 212, 157);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: rgb(182, 182, 182);
+}
+
