@@ -69,12 +69,16 @@ def main():
     parser.add_argument('-rr', '--refresh_rate', default=REFRESH_RATE, type=int,
                         help="Number of seconds per check. Ex: 1")
     parser.add_argument('-e', '--editor', default=EDITOR,
-                        help="Editor to open new post in. Must be added to path. Ex: vim")
+                        help="Editor to open new post in. Must be added to path. Ex: vim."
+                             " The special value NONE can be provided to not use an editor."
+                             " If not provided, we'll try to guess a default.")
     parser.add_argument('-d', '--date',
                         default=datetime.datetime.today().strftime('%Y-%m-%d'),
                         help="date of the post (of the form YYYY-MM-DD). Defaults to current date")
     parser.add_argument('-ni', '--no-images', action='store_true',
                         help="Don't poll the image dir for new images to convert to blog post links")
+    parser.add_argument('-elp', '--edit-last-post', action='store_true',
+                        help="Re-open the last post edited")
     args = parser.parse_args()
 
     # Handle control+c nicely
@@ -83,8 +87,37 @@ def main():
         raise SystemExit('\nExiting...\n')
     signal.signal(signal.SIGINT, exit_)
 
-    if not args.post_name:
-        args.post_name = input("Enter the name of your post to create: ")
+    post_dir = p_join(args.root, args.post_root)
+    if args.edit_last_post:
+        last_change_time = float('inf')
+        last_post = None
+        for entry in os.scandir(post_dir):  # NOTE: this breaks on an empty post_dir
+            entry_last_change_time = entry.stat().st_mtime  # This isn't actually giving me the most recent accessed file...
+            print(entry_last_change_time, entry.name)
+            if entry.is_file() and entry_last_change_time < last_change_time:
+                last_change_time = entry_last_change_time
+                last_post = entry.name
+        args.post_name = last_post
+        post_path = p_join(post_dir, args.post_name)
+        post_title = args.post_name[:-3]  # remove the .md extension
+    else:
+        if not args.post_name:
+            args.post_name = input("Enter the name of your post to create: ")
+        # jekyllify filename and create with layout info
+        today = args.date
+        post_title = today + '-' + args.post_name.replace(' ', '-')
+        post_path = p_join(post_dir, post_title + '.md')
+        if not os.path.isfile(post_path):
+            print('Creating new blog:', post_path)
+            with open(post_path, 'w') as post:
+                write = lambda s: print(s, file=post) # flake8: noqa
+                write('---')
+                write('layout: default')
+                write('title: ' + args.post_name)
+                write('---')
+                write('')
+        else:
+            print(post_path, 'already created.')
 
     # erase empty child folders in img_dir
     img_dir = p_join(args.root, args.image_root)
@@ -94,26 +127,10 @@ def main():
             print('Erasing empty dir: ', dir_path)
             os.rmdir(dir_path)
 
-    # jekyllify filename and create with layout info
-    today = args.date
-    post_title = today + '-' + args.post_name.replace(' ', '-')
-    post_dir = p_join(args.root, args.post_root)
-    post_path = p_join(post_dir, post_title + '.md')
-    if not os.path.isfile(post_path):
-        print('Creating new blog:', post_path)
-        with open(post_path, 'w') as post:
-            write = lambda s: print(s, file=post) # flake8: noqa
-            write('---')
-            write('layout: default')
-            write('title: ' + args.post_name)
-            write('---')
-            write('')
-    else:
-        print(post_path, 'already created.')
 
     # Opening the editor blocks the rest of the script if it's a terminal app,
     # so only open it if we're not using images
-    if args.editor:
+    if args.editor and args.editor != 'NONE':
         print("Copy-paste the following to open the post:")
         print("\n",' '* 8, args.editor, post_path, "\n")
         if args.no_images:
