@@ -27,7 +27,7 @@ them needed root access! When running it manually, there is no need for root
 access, so systemd shoudln't need it either. With that sentiment, here is the user
 level dropbox systemd service file I came up with.
 
-```
+```conf
 [Unit]
 Description=Dropbox as a user service
 After=local-fs.target network.target

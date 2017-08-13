@@ -15,7 +15,13 @@ cd ~/Music/YouTube
 This [answer](http://askubuntu.com/questions/673442/downloading-youtube-playlist-with-youtube-dl-skipping-existing-files) on askubuntu was very helpful
 
 ```bash
-youtube-dl --download-archive downloaded.txt --no-post-overwrites --max-downloads 10 -ciwx --audio-format mp3 -o "%(title)s.%(ext)s" <playlist-url>
+youtube-dl --download-archive downloaded.txt \
+    --no-post-overwrites \
+    --max-downloads 10 \
+    -ciwx \
+    --audio-format mp3 \
+    -o "%(title)s.%(ext)s" \
+    <playlist-url>
 ```
 
 - Start [SSHelper](http://arachnoid.com/android/SSHelper/) on my Android
