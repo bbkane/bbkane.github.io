@@ -12,7 +12,7 @@ registering with a service discovery system.
 
 - server.py
 
-```
+```python
 from flask import Flask, jsonify
 app = Flask(__name__)
 
@@ -53,7 +53,7 @@ your IPAM.
 
 - hosts
 
-```
+```conf
 [prod]
 localhost ansible_connection=local
 ```
@@ -68,7 +68,7 @@ code...
 
 - playbook.yaml
 
-```
+```yaml
 ---
 - hosts: all
   gather_facts: false
@@ -82,11 +82,11 @@ code...
     register: json_response
   - name: Print the whole response to help with parsing
     debug:
-      msg: "chassis is {{ json_response }}"
+      msg: "chassis is {% raw %}{{ json_response }}{% endraw %}"
   - name: Tell the world I got my chassis
     debug:
       # need to decode the response from the content part of the http response, then index into it
-      msg: "chassis is {{ (json_response.content|from_json).result.chassis }}"
+      msg: "chassis is {% raw %}{{ (json_response.content|from_json).result.chassis }}{% endraw %}"
 ```
 
 Then run it with:
