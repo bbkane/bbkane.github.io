@@ -6,6 +6,11 @@
 
 @import "{{ site.theme }}";
 
+// That actually imports pygments highlighters, so I'm going to have to import my own under it to overwrite that
+// For performance, I'm actually just going to <link> to it in the layout
+// Actually, because this is generated at build time, I don't think import would hurt at runtime
+// (modulo browser caching)
+
 // TODO: change to percent if it doesn't break stuff
 $blog-max-width: 800px;
 

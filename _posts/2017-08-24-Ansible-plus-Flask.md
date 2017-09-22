@@ -1,18 +1,22 @@
-I was lurking on the *networktocode* Slack chennel, when someone asked how to
+---
+layout: default
+title: Ansible Plus Flask
+---
+
+I was lurking on the *networktocode* Slack channel, when someone asked how to
 get variables from an external system into an Ansible playbook. Intrigued, I
 mocked up a quick Flask server to serve a REST API, and a playbook to consume
-it. This proof of concept that happily ignores a lot of issues you'd face in
+it. This proof of concept happily ignores a lot of issues you'd face in
 production:
 
 # The Server
 
 In prod, this would hopefully be some high-powered IPAM with a REST API that
-dealt properly with auth and could be a good source of truth, as well as
-registering with a service discovery system.
+dealt properly with auth and could be a reliable source of truth.
 
 - server.py
 
-```
+```python
 from flask import Flask, jsonify
 app = Flask(__name__)
 
@@ -48,12 +52,12 @@ Run it with `python server.py`
 # The Hosts file
 
 Since I'm not really doing anything, I'm using a minimal hosts file. In prod,
-you could use static or write some kind of dynamic host plugin that also queries
+you could use a static hosts file, or a dynamic hosts system that also queries
 your IPAM.
 
 - hosts
 
-```
+```conf
 [prod]
 localhost ansible_connection=local
 ```
@@ -68,7 +72,7 @@ code...
 
 - playbook.yaml
 
-```
+```yaml
 ---
 - hosts: all
   gather_facts: false
@@ -82,11 +86,11 @@ code...
     register: json_response
   - name: Print the whole response to help with parsing
     debug:
-      msg: "chassis is {{ json_response }}"
+      msg: "chassis is {% raw %}{{ json_response }}{% endraw %}"
   - name: Tell the world I got my chassis
     debug:
       # need to decode the response from the content part of the http response, then index into it
-      msg: "chassis is {{ (json_response.content|from_json).result.chassis }}"
+      msg: "chassis is {% raw %}{{ (json_response.content|from_json).result.chassis }}{% endraw %}"
 ```
 
 Then run it with:
