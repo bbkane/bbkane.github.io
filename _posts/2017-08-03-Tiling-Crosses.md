@@ -21,10 +21,22 @@ The square pattern for the cross pattern:
 
 ![The square pattern for the cross pattern]({{ site.baseurl }}/img/2017-08-03-Tiling-Crosses/p_even_odd_i_j.png)
 
-The neatest part of the code is the transformation algorithm and I wanted to
-note how I came up with the formula for `transform_point`. I need to talk to my
-old Linear Algebra professor to get his perspective on how I might have been
-able to solve this more efficiently somehow.
+The neatest part of the code is the transformation algorithm:
+
+```javascript
+// transform a point in s to the center of a cross in c
+// derivation in README
+function transformPoint(point: Point, point_field: SquareField): Point {
+  let new_x = point_field.n + point.x * 2 + point.y * -1;
+  let new_y = 1 + point.x + point.y * 2;
+  let ret = new Point(new_x, new_y, point.color);
+  return ret;
+}
+```
+
+I wanted to note how I came up with the formula for `transformPoint`. I need to
+talk to my old Linear Algebra professor to get his perspective on how I might
+have been able to solve this more efficiently somehow.
 
 The goal is to map a point in $$P$$ (a square field of points (really also squares))
 to the center of a cross in $$C$$ (a square field of crosses turned caddy-corner).
