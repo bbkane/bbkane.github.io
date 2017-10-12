@@ -3,6 +3,8 @@ layout: default
 title: Anaconda Python Bash Functions
 ---
 
+## Conda Env Management
+
 I use conda for all of my Python projects. Because I'm so often making a project
 directory, then making a conda environment with the same name, I've created the
 following code to ease the process.
@@ -21,6 +23,33 @@ conda_create_pwd() {
 alias source_activate_pwd='source activate $(basename $(pwd))'
 ```
 
+For many projects, I like to have a run script with the following code to
+automatically activate the environment
+
+```bash
+#!/bin/bash
+
+# exit the script on command errors or unset variables
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+IFS=$'\n\t'
+
+# https://stackoverflow.com/a/246128/295807
+readonly script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd "${script_dir}"
+
+
+set +eu
+if [[ "${CONDA_DEFAULT_ENV}" != "$(basename $(pwd))" ]]; then
+    source activate "$(basename $(pwd))"
+fi
+set -eu
+
+# actual application code here, now that I'm in the correct dir
+# with the correct python
+```
+
+## Anaconda Python Management
 
 On Mac, I use `brew` to manage package installation. `brew` expects Python
 version 2, so I put the following code in my Bash initialization files to
