@@ -46,5 +46,5 @@ rsync_minimal "${remote_user}@${remote_host}:${remote_dir}/" "${local_dir}/"
 When messing with a  filling filesystem on Android, I like to use the following command to see the biggest 30 files:
 
 ```bash
-du -ax | sort -k1,1n | tail -n30
+du -ax ./* | sort -k1,1n | tail -n30
 ```
