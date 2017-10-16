@@ -40,3 +40,11 @@ rsync_minimal "${remote_user}@${remote_host}:${remote_dir}/" "${local_dir}/"
 # use this if I need to not clog up our wi-fi
 # rsync_minimal --bwlimit=500 "${remote_user}@${remote_host}:${remote_dir}/" "${local_dir}/"
 ```
+
+## Bonus
+
+When messing with a  filling filesystem on Android, I like to use the following command to see the biggest 30 files:
+
+```bash
+du -ax ./* | sort -k1,1n | tail -n30
+```
