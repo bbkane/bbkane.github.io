@@ -2,11 +2,13 @@
 
 readonly jekyll_port=4000
 
-# On my Linux VM, Firefox isn't installed.
-# TODO: test the jekyll_port stuff
+# Should I check if a GUI is installed?
 if [[ "$(uname)" == "Darwin" ]]; then
-    (echo "Will open the site in 5 sec" && sleep 5 && open "http://127.0.0.1:${jekyll_port}/") &
+    open_command=open
+elif [[ "$(uname)" == "Linux" ]]; then
+    open_command=xdg-open
 fi
+(echo "Will open the site in 5 sec" && sleep 5 && "${open_command}" "http://127.0.0.1:${jekyll_port}/") &
 
 # This is not only OS dependent (modern Linux), but the primary interface is also machine dependent
 if [[ "$(hostname)" == "bbkane-Latitude-E7440" ]]; then
