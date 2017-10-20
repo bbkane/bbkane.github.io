@@ -157,7 +157,7 @@ keeping actually hampers using this environment.yaml on another machine. Delete
 it (so in this example, `- scp==0.10.2` would be the last line), and save this
 file in your repository.
 
-## Using it on another machine
+## Use it on another machine
 
 When someone else wants to use your environment, they only have to use the
 following command:
@@ -168,3 +168,13 @@ conda env create -f environment.yaml
 
 Which will do all the work we just did without them having to do much of
 anything.
+
+## Delete the environment
+
+When you need more space, or you screw something up and you want to delete the environment, use
+
+```
+conda remove --name <name> --all
+```
+
+Because `conda` stores environments separately from your code, you don't have to worry about it deleting anything you created, and if you need it the environment back, you can just recreate it with your `environment.yaml`.
