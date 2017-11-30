@@ -1,9 +1,25 @@
-# An Isolated and Reproducible Ansible and Vagrant Setup
+---
+layout: default
+title: An Isolated and Reproducible Ansible and Vagrant Setup on Mac
+---
 
-Ansible does not support Windows. This was set up using a Mac.
+Ansible is a great tool for automating system maintenance. This is how I install it. My notes differ from the official ones in the following ways:
 
-http://docs.ansible.com/ansible/latest/intro_installation.html#latest-releases-on-mac-osx
+- I install as much of this software as I can isolated from the system tools.
+  This means I can update my projects and the system code independently and I
+  can uninstall my tools cleanly.
+- I've added notes for integrating VM creation with Vagrant/VirtualBox and
+  Ansible. This trio really works nicely when you want to spin up a VM or
+  network of VMs, do horrible dangerous things to them, and finally kill them
+  when you mess up too badly. All of this information is stored in relatively
+  portable files, so it's easy to make a base configuration for VMs then
+  customize it for different projects.
 
+## Install Ansible
+
+Ansible does not support Windows. These notes are specifically for Mac, though
+they *should* be trivial to modify for Linux.  [The Ansible
+docs](http://docs.ansible.com/ansible/latest/intro_installation.html#latest-releases-on-mac-osx)
 suggests that we should use pip to install it. This means that we need to
 install Python to use its pip. Macs have an older version of python, so I like
 to install a new one with Anaconda. This has two purposes- it gets me a modern
@@ -15,8 +31,8 @@ multiple versions of Ansible and uninstall it.
 
 I use the 3.6 64-bit Command-Line Installer
 
-- https://www.anaconda.com/download/#download
-- https://docs.anaconda.com/anaconda/install/mac-os#macos-graphical-install
+- [Download link](https://www.anaconda.com/download/#download)
+- [Install Instructions](https://docs.anaconda.com/anaconda/install/mac-os#macos-graphical-install)
   (scroll to command line part)
 
 You want to install it to the default location and prepend the install location
@@ -60,7 +76,7 @@ this environment has its own copy of Python.
 ## Install `ansible`
 
 ```bash
-pip install ansible
+pip install ansible==2.4
 ```
 
 Test it:
@@ -89,11 +105,11 @@ and then kill when we screw them up too badly.
 
 ## Install Virtualbox
 
-- I use [Virtuabox 5.1](https://www.virtualbox.org/wiki/Download_Old_Builds_5_1)
+- I use [Virtualbox 5.2.2](https://www.virtualbox.org/wiki/Download_Old_Builds_5_1)
 
 ## Install Vagrant
 
-- I use [vagrant 1.8.7](https://releases.hashicorp.com/vagrant/1.8.7/)
+- I use [vagrant 2.0.1](https://releases.hashicorp.com/vagrant/2.0.1/)
 
 ## Launch a small VM network
 
@@ -102,13 +118,18 @@ mkdir -p ~/Code/Vagrant/small_network
 cd !$
 ```
 
-Copy the following into a file called `~/Code/Vagrant/small_network/Vagrantfile`
+Copy the following into a text file called
+`~/Code/Vagrant/small_network/Vagrantfile`. If you don't have a text editor
+installed to do this, I recommend [Visual Studio
+Code](https://code.visualstudio.com/).
 
 ```ruby
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
 Vagrant.configure('2') do |config|
+
+  # shared settings
   config.vm.box = 'centos/7'
   # Disable the default synced folder because it's too much trouble to set up
   config.vm.synced_folder '.', '/vagrant', disabled: true
@@ -119,13 +140,13 @@ Vagrant.configure('2') do |config|
     vb.customize ['modifyvm', :id, '--clipboard', 'bidirectional']
   end
 
+  # specific settings for node1
   config.vm.define :node1 do |node1|
     node1.vm.network :private_network, ip: '10.0.0.11'
     node1.vm.hostname = 'node1'
-    :q
-
   end
 
+  # specific settings for node1
   config.vm.define :node2 do |node2|
     node2.vm.network :private_network, ip: '10.0.0.12'
     node2.vm.hostname = 'node2'
@@ -137,10 +158,20 @@ Feel free to read the
 [docs](https://www.vagrantup.com/intro/getting-started/index.html), but we're
 really just using Vagrant to give us easily buildable and destroyable VMs.
 
-Test by SSHing into the first node:
+With the Vagrantfile in place, we've built a small network of two nodes. Let's turn it on:
 
 ```
-ssh vagrant@10.0.0.11  # password: vagrant
+cd ~/Code/Vagrant/small_network
+vagrant up
+```
+
+Test by SSHing into the two nodes:
+
+```
+vagrant ssh node1
+exit  # exit from inside the VM
+vagrant ssh node2
+exit  # exit from inside the VM
 ```
 
 You'll have to accept the key fingerprint, but then you should be in.
@@ -160,11 +191,35 @@ all:
     node1:
       ansible_host: 10.0.0.11
       ansible_ssh_user: vagrant
-      ansible_ssh_private_key_file: ~/Code/Vagrant/small_network/.vagrant/machines/node1/virtualbox/private_key
+      ansible_ssh_private_key_file: ./.vagrant/machines/node1/virtualbox/private_key
     node2:
       ansible_host: 10.0.0.12
       ansible_ssh_user: vagrant
-      ansible_ssh_private_key_file: ~/Code/Vagrant/small_network/.vagrant/machines/node2/virtualbox/private_key
+      ansible_ssh_private_key_file: ./.vagrant/machines/node2/virtualbox/private_key
+```
+
+Normally, the first time you SSH into a device, you'll get a prompt asking you
+whether you wanto to add it to the list of known hosts:
+
+```
+16:08 $ ssh vagrant@10.0.0.11
+The authenticity of host '10.0.0.11 (10.0.0.11)' can't be established.
+ECDSA key fingerprint is SHA256:hnneMegMYOkYyoB9EGZ7YU5I+CJrhZt1+QvGYnc4OI0.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '10.0.0.11' (ECDSA) to the list of known hosts.
+vagrant@10.0.0.11's password:
+[vagrant@node1 ~]$
+```
+
+This is a security feature, but when we're creating and destroying groups of
+VMs willy-nilly, it can get annoying to verify key fingerprints, so let's tell
+Ansible to not check. Create a file called
+`~/Code/Vagrant/small_network/ansible.cfg` and put the following in it:
+
+```cfg
+[defaults]
+# NOTE: Turn this on for Prod for security
+host_key_checking = False
 ```
 
 And test it  (make sure you are in `~/Code/Vagrant/small_network/` and are
