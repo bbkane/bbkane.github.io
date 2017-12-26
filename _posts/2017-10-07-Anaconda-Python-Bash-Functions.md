@@ -38,10 +38,12 @@ IFS=$'\n\t'
 readonly script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd "${script_dir}"
 
+env_name="$(basename $(pwd))"
 
 set +eu
-if [[ "${CONDA_DEFAULT_ENV}" != "$(basename $(pwd))" ]]; then
-    source activate "$(basename $(pwd))"
+if [[ "${CONDA_DEFAULT_ENV}" != "${env_name}" ]]; then
+    # shellcheck disable=SC1091
+    source activate "${env_name}"
 fi
 set -eu
 
