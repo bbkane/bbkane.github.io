@@ -7,9 +7,11 @@ Using the `sqlite3` command prompt is a pain on my linux box.
 For some reason, the standard keyboard shortcuts don't work over SSH, so I can't
 backspace, get previous commands, or use other basic shell manipulation commands.
 
-Instead, it's easier to create a file and read its commands to work for me.
-This also lets me set a few options I like, run multiple commands easily, and get
-syntax highligting in the editor.
+Instead, it's easier to create an initialization file and read its commands to
+work for me.  This also lets me set a few options I like, run multiple commands
+easily, and get syntax highlighting in the editor. If I want to keep these
+setting for every sqlite session, I just rename it `~/.sqliterc`. Then the
+sqlite3 shell will load it automatically.
 
 ```sql
 -- show the command entered
