@@ -25,7 +25,7 @@ then tell systemd to start it now, and start it on boot, and you are done.
 Fairly easy. I went a-Googling for Dropbox service files and realized all of
 them needed root access! When running it manually, there is no need for root
 access, so systemd shoudln't need it either. With that sentiment, here is the user
-level dropbox systemd service file I came up with.
+level dropbox systemd service file I came up with (see [the docs](https://www.freedesktop.org/software/systemd/man/systemd.unit.html#Specifiers) for more information).
 
 ```conf
 [Unit]
