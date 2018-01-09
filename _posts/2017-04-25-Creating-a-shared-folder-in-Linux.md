@@ -24,6 +24,8 @@ getfacl -R /var/www > /var/www/permissions.facl
 # See https://stackoverflow.com/a/6448326/2958070
 cd /var/www/html/
 chgrp -R apache .
+# Add read, write, execute/search bit to directories (+x means files can be
+# accessed when # applied to a directory)
 chmod -R g+rwX .
 find . -type d -exec chmod g+s '{}' +
 
