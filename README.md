@@ -93,3 +93,10 @@ bundle exec jekyll serve --host 0.0.0.0
 ## Customize CSS
 
 Customize the CSS by overwriting attributes from [the original theme](https://github.com/pages-themes/midnight/blob/master/_sass/jekyll-theme-midnight.scss) in assets/css/style.css.
+
+## Update dependencies
+
+When GitHub nags you to update dependencies, follow the advice on [The GitHub
+Setup
+Page](https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/#keeping-your-site-up-to-date-with-the-github-pages-gem)
+and run `bundle update github-pages`.
