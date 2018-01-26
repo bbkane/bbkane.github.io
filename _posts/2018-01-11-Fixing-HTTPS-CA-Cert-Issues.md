@@ -121,11 +121,7 @@ copy:
   dest: path/to/cert.crt
 ```
 
-## Use the Certificate
-
-I place the certificate at the user level (under `~`), but I'm fairly certain
-you can add it at the system level by placing it in `/etc/ssl/certs`. I haven't
-tested this theory.
+## Use the Certificate at User level
 
 In the
 [`requests`](http://docs.python-requests.org/en/master/user/advanced/#ssl-cert-verification)
@@ -138,5 +134,25 @@ response = requests.get('https://www.google.com', verify='path/to/cert.crt')
 ```
 
 And then, of course, you can do whatever you want with the output.
+
+## Use the Certificate at System level (Red Hat / CentOS 7)
+
+If you don't want to pass path to the certificate every time you want to use it,
+you need to place it in the `/etc/pki/ca-trust/source/anchors` directory and run
+the `update-ca-trust extract`. commmand (as explained in `man update-ca-cert`). 
+I use the following ansible snippet to this:
+
+```yaml
+- name: Install custom cert so I can use https
+  become: true
+  copy:
+    src: /path/to/custom.crt
+    dest: /etc/pki/ca-trust/source/anchors/custom.crt
+    mode: 0777  # that's what the crts there are..
+
+- name: Extract custom cert
+  become: true
+  command: update-ca-trust extract
+```
 
 So, that's how I deal with certificates in VMs.
