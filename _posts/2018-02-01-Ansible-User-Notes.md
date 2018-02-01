@@ -111,3 +111,11 @@ For some reason, this isn't normally exposed. Here's a way to get it:
 ### Other Notes:
 
  - `--ask-become-pass` will break running the playbook if `remote_user` has passwordless `sudo`
+ - `become_user` will fail if Ansible detects it has to do it insecurely (see [the docs](http://docs.ansible.com/ansible/latest/become.html#becoming-an-unprivileged-user). Set the following option in `ansbible.cfg` to tell Ansible this is okay.
+
+```config
+# This presents a window for a logged-in attacker,
+# but it's a small window and I need what it enables
+# See http://docs.ansible.com/ansible/latest/become.html#becoming-an-unprivileged-user
+allow_world_readable_tmpfiles = True
+```
