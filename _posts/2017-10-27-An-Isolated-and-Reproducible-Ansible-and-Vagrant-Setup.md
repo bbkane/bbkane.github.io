@@ -25,7 +25,7 @@ install Python to use its pip. Macs have an older version of python, so I like
 to install a new one with Anaconda. This has two purposes- it gets me a modern
 and easily uninstallable version of Python, and it will let me isolate my
 Ansible install from the rest of the system, making it easier to install
-multiple versions of Ansible and uninstall it.
+multiple versions of Ansible and also uninstall it.
 
 ## Install Anaconda Python
 
@@ -105,18 +105,22 @@ and then kill when we screw them up too badly.
 
 ## Install Virtualbox
 
-- I use [Virtualbox 5.2.2](https://www.virtualbox.org/wiki/Download_Old_Builds_5_1)
+- I currently use [Virtualbox 5.2.2](https://www.virtualbox.org/wiki/Download_Old_Builds_5_1)
 
 ## Install Vagrant
 
-- I use [vagrant 2.0.1](https://releases.hashicorp.com/vagrant/2.0.1/)
+- I currently use [vagrant 2.0.2](https://releases.hashicorp.com/vagrant/2.0.2/)
 
 ## Launch a small VM network
+
+At this point, we've installed all the programs we need to. The rest of this is creating the right files and running commands. I've created a [GitHub repo]() with the appropriate files and minimal instructions to get the network up and running.
 
 ```bash
 mkdir -p ~/Code/Vagrant/small_network
 cd !$
 ```
+
+We'll be staying in this folder for all further commands and file creation.
 
 Copy the following into a text file called
 `~/Code/Vagrant/small_network/Vagrantfile`. If you don't have a text editor
@@ -128,27 +132,27 @@ Code](https://code.visualstudio.com/).
 # vi: set ft=ruby :
 
 Vagrant.configure('2') do |config|
-
-  # shared settings
+  # set settings common to all VMs
   config.vm.box = 'centos/7'
   # Disable the default synced folder because it's too much trouble to set up
   config.vm.synced_folder '.', '/vagrant', disabled: true
   config.vm.synced_folder '.', '/home/vagrant/sync', disabled: true
 
+  # Don't check the host key
+  config.ssh.verify_host_key = false
+
+  # Add some VirtualBox specific settings
   config.vm.provider 'virtualbox' do |vb|
     vb.gui = true
     vb.customize ['modifyvm', :id, '--clipboard', 'bidirectional']
   end
 
-  # specific settings for node1
+  # Create and set VM specific settings
   config.vm.define :node1 do |node1|
-    node1.vm.network :private_network, ip: '10.0.0.11'
     node1.vm.hostname = 'node1'
   end
 
-  # specific settings for node1
   config.vm.define :node2 do |node2|
-    node2.vm.network :private_network, ip: '10.0.0.12'
     node2.vm.hostname = 'node2'
   end
 end
@@ -160,7 +164,7 @@ really just using Vagrant to give us easily buildable and destroyable VMs.
 
 With the Vagrantfile in place, we've built a small network of two nodes. Let's turn it on:
 
-```
+```bash
 cd ~/Code/Vagrant/small_network
 vagrant up
 ```
@@ -174,64 +178,58 @@ vagrant ssh node2
 exit  # exit from inside the VM
 ```
 
-You'll have to accept the key fingerprint, but then you should be in.
-Log into the next one (`10.0.0.12`) and accept the key fingerprint as well.
-
-This puts our public SSH key in the `~/.ssh/authorized_keys` on those systems-
-we'll need that for Ansible to reach it.
-
 ## Use Ansible with our VMs
 
+### Create a `hosts.ini` for Ansible
+
 We need to tell Ansible about our VMs and how to connect to them. Copy the
-following into `~/Code/Vagrant/small_network/hosts.yaml`:
-
-```yaml
-all:
-  hosts:
-    node1:
-      ansible_host: 10.0.0.11
-      ansible_ssh_user: vagrant
-      ansible_ssh_private_key_file: ./.vagrant/machines/node1/virtualbox/private_key
-    node2:
-      ansible_host: 10.0.0.12
-      ansible_ssh_user: vagrant
-      ansible_ssh_private_key_file: ./.vagrant/machines/node2/virtualbox/private_key
-```
-
-Normally, the first time you SSH into a device, you'll get a prompt asking you
-whether you wanto to add it to the list of known hosts:
+following into `~/Code/Vagrant/small_network/hosts.ini`:
 
 ```
-16:08 $ ssh vagrant@10.0.0.11
-The authenticity of host '10.0.0.11 (10.0.0.11)' can't be established.
-ECDSA key fingerprint is SHA256:hnneMegMYOkYyoB9EGZ7YU5I+CJrhZt1+QvGYnc4OI0.
-Are you sure you want to continue connecting (yes/no)? yes
-Warning: Permanently added '10.0.0.11' (ECDSA) to the list of known hosts.
-vagrant@10.0.0.11's password:
-[vagrant@node1 ~]$
+node1
+node2
 ```
 
-This is a security feature, but when we're creating and destroying groups of
-VMs willy-nilly, it can get annoying to verify key fingerprints, so let's tell
-Ansible to not check. Create a file called
-`~/Code/Vagrant/small_network/ansible.cfg` and put the following in it:
+### Tell Ansible to use Vagrant's SSH settings
 
-```cfg
+If we tried to connect to `node1` and `node2` as-is from Ansible, Ansible won't be able to find them. To fix this we need to export Vagrant's SSH settings to an SSH config file and tell Ansible to use that file.
+
+```
+vagrant ssh-config > ssh_config
+```
+
+Next we need to connect that `ssh_config` to Ansible with an `ansible.cfg` file in the `small_network` directory. In this file, I've also enabled some other useful options.
+See [the docs](http://docs.ansible.com/ansible/latest/intro_configuration.html) for more info:
+
+```ini
 [defaults]
-# NOTE: Turn this on for Prod for security
 host_key_checking = False
+retry_files_enabled = False
+inventory = hosts.ini
+# This presents a window for a logged-in attacker,
+# but it's a small window and I need what it enables
+# See http://docs.ansible.com/ansible/latest/become.html#becoming-an-unprivileged-user
+allow_world_readable_tmpfiles = True
+
+# https://stackoverflow.com/a/45086602/2958070
+stdout_callback=debug
+stderr_callback=debug
+
+[ssh_connection]
+# generate ssh_config with `vagrant ssh-config`
+ssh_args = -F ./ssh_config
 ```
 
 And test it  (make sure you are in `~/Code/Vagrant/small_network/` and are
 using your ansible environment (`source activate ansible-2.4`)):
 
-```
-ansible -i hosts.yaml all -m ping
+```bash
+ansible all -m ping
 ```
 
 You should get something like the following:
 
-```
+```javascript
 (ansible-2.4) ✔ ~/Code/Vagrant/small_network
 15:09 $ ansible -i hosts.yaml all -m ping
 node1 | SUCCESS => {
@@ -269,7 +267,7 @@ starting from the VMs down
 
 ### Erase a VM
 
-```
+```bash
 cd ~/Code/Vagrant/small_network/
 vagrant destroy
 ```
