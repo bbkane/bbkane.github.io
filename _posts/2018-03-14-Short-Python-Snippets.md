@@ -1,7 +1,19 @@
 ---
 layout: default
-title: Inline Multiline Python Strings
+title: Short Python Snippets
 ---
+
+## Enable INFO Level Python Logging
+
+This is fun to set when netmiko isn't doing it's ***ing job and I hate
+everything about computers and I seriously consider selling everything, growing
+a mustache, and becoming a sheep farmer in New Zealand.
+
+```python
+logging.basicConfig(level=logging.DEBUG)
+```
+
+## Inline Multiline Strings
 
 This is a quick post on inline multiline strings. I like to use the following style:
 
