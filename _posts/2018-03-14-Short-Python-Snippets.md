@@ -10,7 +10,9 @@ everything about computers and I seriously consider selling everything, growing
 a mustache, and becoming a sheep farmer in New Zealand.
 
 ```python
-logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(asctime)s %(levelname)s %(name)s %(filename)s:%(lineno)s -- %(message)s',
+                    datefmt='%Y-%m-%d %H:%M:%S')
 ```
 
 ## Inline Multiline Strings
