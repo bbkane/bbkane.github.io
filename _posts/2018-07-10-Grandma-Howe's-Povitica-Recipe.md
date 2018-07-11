@@ -14,7 +14,7 @@ bread from Croatia that my great-grandparents brought over a taste and recipe
 for. We would eye each other hungrily as Mom warmed up the bread in the oven
 and carefully distributed it as fairly as possible between the five of us. Then
 the negotiations would begin (x cookies for y povitica, etc.) and we would
-enjoy our delicious desserts. Grandma doesn't make povatica anymore, but my aunt Dana does! I'm
+enjoy our delicious desserts. These days, Grandma works with my Aunt Dana to make povatica. I'm
 placing the recipe on my blog so I can keep an important part of my childhood,
 share it with friends, and hopefully make myself one day.
 
