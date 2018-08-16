@@ -79,7 +79,7 @@ This is a quick post on inline multiline strings. I like to use the following st
 
 
 ```python
-from textwarp import dedent
+from textwrap import dedent
 
 
 def main():
