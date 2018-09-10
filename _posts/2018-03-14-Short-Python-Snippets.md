@@ -55,9 +55,14 @@ This code is for shorter one file scripts that need command line arguments with
 the [argparse](https://docs.python.org/3/library/argparse.html) library.
 
 ```python
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import argparse
 import sys
 
+__author__ = "Benjamin Kane"
+__version__ = "0.1.0"
 __doc__ = """
 <description>
 Examples:
@@ -69,15 +74,17 @@ Code at <repo>
 
 
 def parse_args(*args, **kwargs):
-    parser = argparse.ArgumentParser(description=__doc__,
-                                     formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser = argparse.ArgumentParser(
+        description=__doc__,
+        formatter_class=argparse.RawDescriptionHelpFormatter
+    )
     # TODO: add some args
     return parser.parse_args(*args, **kwargs)
 
 
 def main():
     args = parse_args()
-    ... # do work
+    # do real work
 
 
 if __name__ == "__main__":
