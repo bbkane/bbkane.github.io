@@ -55,6 +55,12 @@ This code is for shorter one file scripts that need command line arguments with
 the [argparse](https://docs.python.org/3/library/argparse.html) library.
 
 ```python
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+__author__ = "Benjamin Kane"
+__version__ = "0.1.0"
+
 import argparse
 import sys
 
