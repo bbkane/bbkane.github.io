@@ -55,3 +55,13 @@ IFS=$'\n\t'
 # readonly script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # cd "${script_dir}"
 ```
+
+## Expand a BASH command
+
+Stolen from [StackOverflow](https://stackoverflow.com/a/19226038)
+
+```bash
+set -x
+command
+{ set +x; } 2>/dev/null
+```
