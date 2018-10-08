@@ -77,7 +77,8 @@ Code at <repo>
 def parse_args(*args, **kwargs):
     parser = argparse.ArgumentParser(
         description=__doc__,
-        formatter_class=argparse.RawDescriptionHelpFormatter)
+        formatter_class=argparse.RawDescriptionHelpFormatter
+    )
 
     # TODO: add some args
     return parser.parse_args(*args, **kwargs)
