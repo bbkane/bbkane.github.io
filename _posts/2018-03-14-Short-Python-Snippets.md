@@ -3,7 +3,8 @@ layout: default
 title: Short Python Snippets
 ---
 
-This is just a collection of Python snippits that are too small for their own posts
+This is just a collection of Python snippits that are too small for their own
+posts. All code is for Python 3.
 
 ## Inline Multiline Strings
 
@@ -90,4 +91,43 @@ def main():
 
 if __name__ == "__main__":
     main()
+```
+
+## Zipping Files
+
+The `shutil.make_archive` function is a bit hard to use. Here's my notes on it and some code to erase partially zipped files on exceptions. This function works well with `pathlib.Path`.
+
+```python
+try:
+    # how params work:
+    # change into root_dir
+    # creating base_name.zip and adding base_dir to it
+    # NOTE: not threadsafe! https://bugs.python.org/issue30511
+    shutil.make_archive(
+        base_name=base_name,
+        format='zip',
+        root_dir=root_dir,
+        base_dir=base_dir.name,
+        dry_run=False,
+        logger=logger
+    )
+# KeyboardInterrupt doesn't inherit from Exception
+except (Exception, KeyboardInterrupt):
+    logger.exception(f'Exception! Deleting {dest_path_zip}')
+    dest_path_zip.unlink()
+    raise
+```
+
+## Creating Context Managers
+
+Add the following two methods to create a context manager for a class:
+
+This is useful when working with resources.
+
+```python
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.clean()
 ```
