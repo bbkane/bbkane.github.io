@@ -65,3 +65,11 @@ set -x
 command
 { set +x; } 2>/dev/null
 ```
+
+## Run a shell command on file change
+
+I like to use [`entr`](http://www.entrproject.org/) for this. Generate some filenames and pipe them to `entr`. The `-c` option clears the screen and the `-s` option means use the shell.
+
+```bash
+ls log.txt | entr -c -s 'date && tail log.txt'
+```
