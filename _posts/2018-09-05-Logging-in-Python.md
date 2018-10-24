@@ -26,18 +26,28 @@ loggers we care about.
 logger = logging.getLogger(__name__)
 
 def main():
+
+    # make sure this directory path exists
+    logname = datetime.datetime.now().strftime('data/%Y-%m-%d.%H.%M.%S.log')
+    # I want to log all loggers to stderr and this file
+    # This isn't needed if you just want to log to stderr
+    handlers = [
+        logging.StreamHandler(),
+        logging.FileHandler(logname),
+    ]
+
     logging.basicConfig(
         format='%(asctime)s %(levelname)s %(name)s %(filename)s:%(lineno)s -- %(message)s',
         datefmt='%Y-%m-%d %H:%M:%S',
-        # level=logging.DEBUG  # only if you want all logging possible from everywhere
+        # level=logging.DEBUG,  # only if you want all logging possible from everywhere
+        handlers=handlers
     )
 
-    # Selectively set levels for just my module so I'm not overwhelmed by logging
-    logging.getLogger('mymodule').setLevel(logging.DEBUG)
+    # Selectively set levels for just some modules so I'm not overwhelmed by logging
+    # See `logging.Logger.manager.loggerDict` for a list of all loggers
+    logger.setLevel(logging.DEBUG)
+    logging.getLogger('dns_providers').setLevel(logging.DEBUG)
 
-    # Optionally, Make it also log to a file
-    logfile = logging.FileHandler('something.log')
-    logger.addHandler(logfile)
 
     ... # do actual work, and be content that it will be logged appropriately
 ```
