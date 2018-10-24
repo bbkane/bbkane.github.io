@@ -28,7 +28,8 @@ bookmark on my browser, I want the link to be stable. Fortunately, this docker
 image [includes a method to set a
 password](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/common.html#notebook-options).
 First, use the method above to get the lab working, and, once you have access
-to the password prompt, run the following code to set up a password:
+to Python (from Jupyter Notebook, for example), run the following code to set
+up a password:
 
 ```python
 In [1]: from IPython.lib import passwd
@@ -54,4 +55,5 @@ docker run \
 ```
 
 Then you can head to `http://<hostname>:8888` and enter the password you set up
-into the password prompt to get to your lab. And, it's a stable link, so it's ready for bookmarking.
+into the password prompt to get to your lab. And, it's a stable link, so it's
+ready for bookmarking.
