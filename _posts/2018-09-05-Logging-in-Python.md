@@ -111,5 +111,5 @@ except MyError as e:
 This alias automatically opens the last log.
 
 ```bash
-alias view_last_log='vim -R $(ls -t logs/*log | head -n1)'
+alias view_last_log='vim -R -c "set syn=config" $(ls -t logs/*log | head -n1)'
 ```
