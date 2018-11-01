@@ -20,26 +20,46 @@ This sets the format for all loggers and turns on debug output for just the
 loggers we care about.
 
 ```python
-# filename: main.py
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+__author__ = "Benjamin Kane"
+__version__ = "0.1.0"
+
+from datetime import datetime
+from pathlib import Path
+import logging
+
 
 # create a module level logger for main
 logger = logging.getLogger(__name__)
 
+
 def main():
+    logdir = Path('logs')
+    logdir.mkdir(parents=True, exist_ok=True)
+    logname = logdir / datetime.now().strftime('%Y-%m-%d.%H.%M.%S.log')
+
     logging.basicConfig(
-        format='%(asctime)s %(levelname)s %(name)s %(filename)s:%(lineno)s -- %(message)s',
-        datefmt='%Y-%m-%d %H:%M:%S',
-        # level=logging.DEBUG  # only if you want all logging possible from everywhere
+        format='# %(asctime)s %(levelname)s %(name)s %(filename)s:%(lineno)s\n%(message)s',
+        # level=logging.DEBUG,  # only if you want all logging possible from everywhere
+        handlers=(
+            logging.StreamHandler(),
+            logging.FileHandler(logname),
+        )
     )
 
-    # Selectively set levels for just my module so I'm not overwhelmed by logging
+    # Selectively set levels for just some modules so I'm not overwhelmed by logging
+    # See `logging.Logger.manager.loggerDict` for a list of all loggers
+    logger.setLevel(logging.DEBUG)
     logging.getLogger('mymodule').setLevel(logging.DEBUG)
 
-    # Optionally, Make it also log to a file
-    logfile = logging.FileHandler('something.log')
-    logger.addHandler(logfile)
+    # ...do actual work, and be content that it will be logged appropriately
+    logger.debug("I'm too loggy for my tree")
 
-    ... # do actual work, and be content that it will be logged appropriately
+
+if __name__ == "__main__":
+    main()
 ```
 
 ### Non top level code
@@ -84,4 +104,12 @@ except MyError as e:
     # the exception stuff will be logged after the message
     logger.exception(f'arg: {arg}')
     raise
+```
+
+# Opening the log
+
+This alias automatically opens the last log.
+
+```bash
+alias view_last_log='vim -R -c "set syn=config" $(ls -t logs/*log | head -n1)'
 ```
