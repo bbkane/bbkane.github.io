@@ -23,39 +23,54 @@ loggers we care about.
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-__author__ = "Benjamin Kane"
-__version__ = "0.1.0"
-
 from datetime import datetime
 from pathlib import Path
 import logging
+import typing as t
 
+__author__ = "Benjamin Kane"
+__version__ = "0.1.0"
 
-# create a module level logger for main
 logger = logging.getLogger(__name__)
 
+LogLevel = t.Union[int, str]
 
-def main():
-    logdir = Path('logs')
-    logdir.mkdir(parents=True, exist_ok=True)
-    logname = logdir / datetime.now().strftime('%Y-%m-%d.%H.%M.%S.log')
+
+def setup_global_logging(
+        log_dir: str = 'logs',
+        loggers: t.Iterable[LogLevel] = [logger, logging.getLogger(__package__)],
+        log_level: LogLevel = logging.INFO,
+        global_log_level: t.Optional[LogLevel] = None):
+    """Set up basic logging to stderr and a log directory
+
+    Use global_log_level to change levels on ALL logging
+    loggers defaults to this module's logger and this module's package's logger
+    See `logging.Logger.manager.loggerDict` for a list of all loggers
+    """
+    log_dir = Path(log_dir)
+    log_dir.mkdir(parents=True, exist_ok=True)
+    logname = log_dir / datetime.now().strftime('%Y-%m-%d.%H.%M.%S.log')
 
     logging.basicConfig(
         format='# %(asctime)s %(levelname)s %(name)s %(filename)s:%(lineno)s\n%(message)s',
-        # level=logging.DEBUG,  # only if you want all logging possible from everywhere
-        handlers=(
-            logging.StreamHandler(),
-            logging.FileHandler(logname),
-        )
+        level=global_log_level,
+        handlers=(logging.StreamHandler(), logging.FileHandler(logname),)
     )
 
-    # Selectively set levels for just some modules so I'm not overwhelmed by logging
-    # See `logging.Logger.manager.loggerDict` for a list of all loggers
-    logger.setLevel(logging.DEBUG)
-    logging.getLogger('mymodule').setLevel(logging.DEBUG)
+    if loggers is not None:
+        for l in loggers:
+            if l is not None:
+                l.setLevel(log_level)
+
+def main():
+    setup_global_logging(log_level=logging.DEBUG)
 
     # ...do actual work, and be content that it will be logged appropriately
     logger.debug("I'm too loggy for my tree")
+    logger.info("I'm too loggy for my tree")
+    logger.warning("I'm too loggy for my tree")
+    logger.error("I'm too loggy for my tree")
+    logger.critical("I'm too loggy for my tree")
 
 
 if __name__ == "__main__":
