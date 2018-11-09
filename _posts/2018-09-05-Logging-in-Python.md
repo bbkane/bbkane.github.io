@@ -26,24 +26,21 @@ loggers we care about.
 from datetime import datetime
 from pathlib import Path
 import logging
-import typing as t
 
 __author__ = "Benjamin Kane"
 __version__ = "0.1.0"
 
 logger = logging.getLogger(__name__)
 
-LogLevel = t.Union[int, str]
-
 
 def setup_global_logging(
         log_dir: str = 'logs',
-        loggers: t.Iterable[LogLevel] = [logger, logging.getLogger(__package__)],
-        log_level: LogLevel = logging.INFO,
-        global_log_level: t.Optional[LogLevel] = None):
+        loggers=[logger, logging.getLogger(__package__)],
+        level=logging.INFO,
+        global_level=None):
     """Set up basic logging to stderr and a log directory
 
-    Use global_log_level to change levels on ALL logging
+    Use global_level to change levels on ALL logging
     loggers defaults to this module's logger and this module's package's logger
     See `logging.Logger.manager.loggerDict` for a list of all loggers
     """
@@ -53,17 +50,18 @@ def setup_global_logging(
 
     logging.basicConfig(
         format='# %(asctime)s %(levelname)s %(name)s %(filename)s:%(lineno)s\n%(message)s',
-        level=global_log_level,
+        level=global_level,
         handlers=(logging.StreamHandler(), logging.FileHandler(logname),)
     )
 
     if loggers is not None:
         for l in loggers:
-            if l is not None:
-                l.setLevel(log_level)
+            if l is not logging.getLogger():
+                l.setLevel(level)
+
 
 def main():
-    setup_global_logging(log_level=logging.DEBUG)
+    setup_global_logging(level=logging.DEBUG)
 
     # ...do actual work, and be content that it will be logged appropriately
     logger.debug("I'm too loggy for my tree")
