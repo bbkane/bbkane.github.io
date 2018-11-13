@@ -74,7 +74,7 @@ I like to use [`entr`](http://www.entrproject.org/) for this. Generate some file
 ls log.txt | entr -c -s 'date && tail log.txt'
 ```
 
-# Generate and use colored print commands
+## Generate and use colored print commands
 
 Define the function:
 
