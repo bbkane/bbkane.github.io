@@ -73,3 +73,26 @@ I like to use [`entr`](http://www.entrproject.org/) for this. Generate some file
 ```bash
 ls log.txt | entr -c -s 'date && tail log.txt'
 ```
+
+# Generate and use colored print commands
+
+Define the function:
+
+```bash
+make_print_color() {
+    color_name="$1"
+    color_code="$2"
+    color_reset="$(tput sgr0)"
+    eval "print_${color_name}() { printf \"${color_code}%s${color_reset}\\n\" \"\$1\"; }"
+}
+```
+
+Use it:
+
+```bash
+make_print_color "green" "$(tput setaf 2)"
+make_print_color "yellow" "$(tput setaf 3)"
+
+print_green "Seeing"
+print_yellow "in Color!"
+```
