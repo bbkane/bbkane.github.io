@@ -83,9 +83,9 @@ make_print_color() {
     color_name="$1"
     color_code="$2"
     color_reset="$(tput sgr0)"
-    if [ -t 1 ] ; then  # Don't print on pipes
+    if [ -t 1 ] ; then
         eval "print_${color_name}() { printf \"${color_code}%s${color_reset}\\n\" \"\$1\"; }"
-    else
+    else  # Don't print on pipes
         eval "print_${color_name}() { printf \"%s\\n\" \"\$1\"; }"
     fi
 }
