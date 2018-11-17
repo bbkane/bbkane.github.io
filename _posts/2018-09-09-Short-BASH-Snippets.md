@@ -78,7 +78,7 @@ ls log.txt | entr -c -s 'date && tail log.txt'
 
 Consider taking out the newlines if you want nested color prints. I almost never do, so I'm leaving them in...
 
-### Define the function factory:
+### Define the function factory
 
 ```bash
 make_print_color() {
@@ -93,7 +93,7 @@ make_print_color() {
 }
 ```
 
-### Use it
+### Generate pretty print functions and use them
 
 ```bash
 make_print_color "red" "$(tput setaf 1)"
