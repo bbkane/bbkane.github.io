@@ -76,7 +76,9 @@ ls log.txt | entr -c -s 'date && tail log.txt'
 
 ## Generate and use colored print commands
 
-Define the function factory:
+Consider taking out the newlines if you want nested color prints. I almost never do, so I'm leaving them in...
+
+### Define the function factory:
 
 ```bash
 make_print_color() {
@@ -91,9 +93,9 @@ make_print_color() {
 }
 ```
 
-Use it
+### Use it
 
-```
+```bash
 make_print_color "red" "$(tput setaf 1)"
 make_print_color "green" "$(tput setaf 2)"
 make_print_color "yellow" "$(tput setaf 3)"
