@@ -10,7 +10,7 @@ it. Luckily, FireFox with some plugins will let me do that.
 ## Install
 
 - Install the [FireFox app](https://play.google.com/store/apps/details?id=org.mozilla.firefox&hl=en_US)
-- Install the following plugins by opening the following links in your Firefox app and tapping "Install":
+- Open the following links in your Firefox app and tap "+ Add to Firefox":
   - [Video Background Play Fix](https://addons.mozilla.org/en-US/firefox/addon/video-background-play-fix/) (I'm on version 1.2.1)
   - [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/) (I'm on version 1.17.4)
 
