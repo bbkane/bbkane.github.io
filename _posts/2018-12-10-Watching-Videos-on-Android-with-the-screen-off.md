@@ -10,11 +10,10 @@ it. Luckily, FireFox with some plugins will let me do that.
 ## Install
 
 - Install the [FireFox app](https://play.google.com/store/apps/details?id=org.mozilla.firefox&hl=en_US)
-- Open your installed FireFox
 - Install [Video Background Play Fix](https://addons.mozilla.org/en-US/firefox/addon/video-background-play-fix/)
-  (I'm on version 1.2.1)
-- Install [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/) (I'm
-  on version 1.17.4)
+  (Click on this link from your FireFox app) (I'm on version 1.2.1)
+- Install [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/)
+  (Click on this link from your FireFox app) (I'm on version 1.17.4)
 
 Now open a video site in FireFox, start the video, and tap that power button to
 make your phone sleep. If it keeps playing, you did it!
