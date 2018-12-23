@@ -67,7 +67,7 @@ __version__ = "0.1.0"
 __doc__ = f"""
 <description>
 Examples:
-    `{sys.argv[0]}`
+    {sys.argv[0]}
 Help:
 Please see Benjamin Kane for help.
 Code at <repo>
