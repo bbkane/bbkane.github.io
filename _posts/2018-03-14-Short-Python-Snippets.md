@@ -64,14 +64,14 @@ import sys
 
 __author__ = "Benjamin Kane"
 __version__ = "0.1.0"
-__doc__ = """
+__doc__ = f"""
 <description>
 Examples:
-    `{prog}`
+    {sys.argv[0]}
 Help:
 Please see Benjamin Kane for help.
 Code at <repo>
-""".format(prog=sys.argv[0])
+"""
 
 
 def parse_args(*args, **kwargs):
@@ -80,7 +80,16 @@ def parse_args(*args, **kwargs):
         formatter_class=argparse.RawDescriptionHelpFormatter
     )
 
-    # TODO: add some args
+    # Use a file or stdin for an argument
+    # https://stackoverflow.com/a/11038508/2958070
+    parser.add_argument(
+        'infile',
+        nargs='?',
+        type=argparse.FileType('r'),
+        default=sys.stdin,
+        help='Use a file or stdin'
+    )
+
     return parser.parse_args(*args, **kwargs)
 
 
