@@ -74,7 +74,20 @@ I like to use [`entr`](http://www.entrproject.org/) for this. Generate some file
 ls log.txt | entr -c -s 'date && tail log.txt'
 ```
 
+## Get the full path to a file
+
+This is perl wrapped in Bash, but it's cross-platform and works on Mac and Linux. The alternative, `readlink -f` doesn't work on Mac.
+
+```bash
+fullpath() {
+    local -r full=$(perl -e 'use Cwd "abs_path";print abs_path(shift)' "$1")
+    echo "$full"
+}
+```
+
 ## Generate and use colored print commands
+
+
 
 Consider taking out the newlines if you want nested color prints. I almost never do, so I'm leaving them in...
 
@@ -103,4 +116,7 @@ make_print_color "yellow" "$(tput setaf 3)"
 print_red "Always"
 print_green "Seeing"
 print_yellow "in Color!"
+
+# print to stderr: https://stackoverflow.com/a/2990533/2958070
+print_red "Error!" >&2
 ```
