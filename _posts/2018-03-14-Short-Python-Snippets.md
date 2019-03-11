@@ -140,3 +140,22 @@ This is useful when working with resources.
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.clean()
 ```
+
+
+## Search and Replace with Named Groups in Python
+
+Every once in a while (usually when making changes to config files or source code), a smart search and replace can save a lot of work. Python's [`re.sub`](https://docs.python.org/3/library/re.html#re.sub) method is useful, but can be confusing to understand. Here's a common use case for it:
+
+```python
+res = re.sub(r'bob was (?P<loc>\w+)',     # search pattern
+             r'bob was seen at \g<loc>',  # replacement pattern
+             r'bob was in bed')           # "target" string
+```
+
+This very contrived example has several useful concepts:
+
+- The search pattern can have named patterns to find with the following schema: `(?P<name_of_group>pattern)`. In this example, the `name_of_group` is `loc` and the `pattern` is `\w+`. `\w` refers to a non-whitespace Unicode character.
+- The replacement pattern can reference captured patterns (referred to as groups), with `\g<name>`. In this case the `name` is `loc` (which matches the search pattern we named `loc`).
+- The "target" string is just the string to run through this regex machinery and `res` is what comes out of it.
+
+`re.sub` is even more powerful (see the docs linked above), but I think this example covers the most common case for me.
