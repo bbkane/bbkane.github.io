@@ -3,6 +3,9 @@ layout: default
 title: Grandma Howe's Cheese Ball Recipe
 ---
 
+
+NOTE (Sun Mar 10 - 2019-03-10 23:18:54 PDT) : I've moved this recipe to the Favorite Recipes post. I'll be removing this page after some time has passed.
+
 This is a cheese ball recipe Grandma Howe gave to us on a recipe card that's delicious and not too hard to make. When I was younger, we kids would help Mom make this.
 
 The brands are important on this recipe. Non Cracker Barrel cheese makes it taste different according to Mom (I've never tried any other brand)
