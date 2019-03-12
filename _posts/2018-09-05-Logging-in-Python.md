@@ -119,6 +119,50 @@ except MyError as e:
     raise
 ```
 
+# Logging Function Calls
+
+Sometimes when debugging, it can be helpful to log all calls, arguments, and results of a function. I have a little decorator to do this. Just decorate the function at definition, and all of that will be logged. This function was inspired by David Beazley's talk [The Fun of Reinvention](https://youtu.be/5nXmq1PsoJ0). As a side note, David Beazley is a mad genius and this talk is a brilliant testament to that.
+
+```python
+from inspect import signature
+from functools import wraps
+
+
+def log_calls(logger, message='', sep=' '):
+    """Decorator to log calls with an optional message
+
+    @log_calls(logger, 'wtf?')
+    def f(a, b):
+        ...
+    """
+
+    if message:
+        message = message + sep
+
+    def wrap(func):
+        sig = signature(func)
+
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+
+            bound = sig.bind(*args, **kwargs)
+
+            argstr = [f'{arg}={value!r}' for arg, value in
+                      bound.arguments.items()]
+            argstr = ', '.join(argstr)
+
+            ret = func(*args, **kwargs)
+
+            logger.debug(f'{message}{func.__name__}({argstr}) -> {ret!r}')
+            return ret
+        return wrapper
+    return wrap
+```
+
+# Formatting [requests](http://docs.python-requests.org/en/master/) calls
+
+I love the `requests` library, but oddly, it doesn't offer a nice way to print most parts of requests and responses. See my [pocket_backup](https://github.com/bbkane/Random-Scripts/blob/master/pocket_backup.py) for a decent set of functions to deal with this. I need to turn my experiences with `requests` into their own blog post...
+
 # Opening the log
 
 This alias automatically opens the last log.
