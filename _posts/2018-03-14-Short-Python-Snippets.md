@@ -159,3 +159,27 @@ This very contrived example has several useful concepts:
 - The "target" string is just the string to run through this regex machinery and `res` is what comes out of it.
 
 `re.sub` is even more powerful (see the docs linked above), but I think this example covers the most common case for me.
+
+## Interactive Console for dev
+
+Sometimes when writing code, it's super helpful to just open an interpreter with the current variables so you can play with them. For example, say I have the following function:
+
+```python
+def get_my_age():
+    birth_date = datetime.datetime(1990, 1, 1)
+    today = datetime.datetime.now()
+    difference = today - birth_date
+    # now what? How do I want to format this?
+
+get_my_age()
+```
+
+Date formatting can get complicated, and the format specifiers can be hard to remember ([tools](http://www.strfti.me/) can help)). However, you can open a console to figure it out by adding the following lines inside the function (underneath `# now what?` in the above).
+
+```python
+    import code
+    code.interact(local=locals())
+```
+
+Then when you run the function, it opens an interactive console at that line and you can play with defined variables directly. Once you have something you like, you can remove that code and use what you made in it's place. This can also be handy when debugging and you want to inspect variables (though also check out `pdb`).
+
