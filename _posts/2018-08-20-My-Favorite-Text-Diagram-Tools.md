@@ -44,6 +44,12 @@ See the commands it provides with `Cmd+P`, then typing `> PlantUML`. One very
 useful command I've found is `PlantUML: Preview Current Diagram`. Just keep in
 mind that it can take a few seconds to turn a change into a live preview.
 
+### Exporting PlantUML diagrams to Confluence
+
+This method even preserves clickable links
+
+1. Export to SVG: `plantuml -tsvg <name>`.
+2. Paste text into *HTML* macro in Confluence.
 
 ## graphviz
 
