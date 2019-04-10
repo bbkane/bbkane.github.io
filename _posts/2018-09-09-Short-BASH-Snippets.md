@@ -3,45 +3,9 @@ layout: default
 title: Short BASH Snippets
 ---
 
-## Run a Server and open a browser with the link
-
-I use a snippet similar to this when I want to open a browser after I run a
-blocking command (usually starting a server). I use this particular example to
-learn Elm. I have something similar to run Jekyll for my blog.
-
-```bash
-learn_elm() {
-    cd ~/Code/Elm || echo "Non-existant dir"
-    code .
-    if [[ "$(uname)" == "Darwin" ]]; then
-        open_command=open
-    elif [[ "$(uname)" == "Linux" ]]; then
-        open_command=xdg-open
-    fi
-    # Open a subshell in a fork
-    (sleep 2 && "${open_command}" "http://127.0.0.1:8000") &
-    # Run the blocking command
-    elm reactor
-}
-```
-
-## Simple but effective backup command.
-
-```bash
-bak() {
-    date_string="$(date +'%Y-%m-%d.%H.%M.%S')"
-    if [[ -d "$1" ]]; then
-        local -r no_slash="${1%/}"
-        cp -r "${no_slash}" "${no_slash}.${date_string}.bak"
-    elif [[ -f "$1" ]]; then
-        cp "$1" "${1}.${date_string}.bak"
-    else
-        echo "Only files and directories supported"
-    fi
-}
-```
-
 ## BASH script starter
+
+I put this at the top of all my scripts because most of the time I want scripts to fail on errors, and half the time I want the script to run in the directory it's in.
 
 ```bash
 #!/bin/bash
@@ -56,24 +20,6 @@ IFS=$'\n\t'
 # cd "${script_dir}"
 ```
 
-## Expand a BASH command
-
-Stolen from [StackOverflow](https://stackoverflow.com/a/19226038)
-
-```bash
-set -x
-command
-{ set +x; } 2>/dev/null
-```
-
-## Run a shell command on file change
-
-I like to use [`entr`](http://www.entrproject.org/) for this. Generate some filenames and pipe them to `entr`. The `-c` option clears the screen and the `-s` option means use the shell.
-
-```bash
-ls log.txt | entr -c -s 'date && tail log.txt'
-```
-
 ## Get the full path to a file
 
 This is perl wrapped in Bash, but it's cross-platform and works on Mac and Linux. The alternative, `readlink -f` doesn't work on Mac.
@@ -85,11 +31,20 @@ fullpath() {
 }
 ```
 
+## Expand a BASH command
+
+This snippet prints the command before running it. Stolen from [StackOverflow](https://stackoverflow.com/a/19226038). Great for debugging!
+
+```bash
+set -x
+command
+{ set +x; } 2>/dev/null
+```
+
+
 ## Generate and use colored print commands
 
-
-
-Consider taking out the newlines if you want nested color prints. I almost never do, so I'm leaving them in...
+Running scripts with colored output can make them much friendlier. Consider taking out the newlines if you want nested color prints. I almost never do, so I'm leaving them in...
 
 ### Define the function factory
 
@@ -119,4 +74,50 @@ print_yellow "in Color!"
 
 # print to stderr: https://stackoverflow.com/a/2990533/2958070
 print_red "Error!" >&2
+```
+
+## Simple but effective backup command.
+
+```bash
+bak() {
+    date_string="$(date +'%Y-%m-%d.%H.%M.%S')"
+    if [[ -d "$1" ]]; then
+        local -r no_slash="${1%/}"
+        cp -r "${no_slash}" "${no_slash}.${date_string}.bak"
+    elif [[ -f "$1" ]]; then
+        cp "$1" "${1}.${date_string}.bak"
+    else
+        echo "Only files and directories supported"
+    fi
+}
+```
+
+## Run a shell command on file change
+
+I like to use [`entr`](http://www.entrproject.org/) for this. Generate some filenames and pipe them to `entr`. The `-c` option clears the screen and the `-s` option means use the shell.
+
+```bash
+ls log.txt | entr -c -s 'date && tail log.txt'
+```
+
+## Run a Server and open a browser with the link
+
+I use a snippet similar to this when I want to open a browser after I run a
+blocking command (usually starting a server). I use this particular example to
+learn Elm. I have something similar to run Jekyll for my blog.
+
+```bash
+learn_elm() {
+    cd ~/Code/Elm || echo "Non-existant dir"
+    code .
+    if [[ "$(uname)" == "Darwin" ]]; then
+        open_command=open
+    elif [[ "$(uname)" == "Linux" ]]; then
+        open_command=xdg-open
+    fi
+    # Open a subshell in a fork
+    (sleep 2 && "${open_command}" "http://127.0.0.1:8000") &
+    # Run the blocking command
+    elm reactor
+}
 ```
