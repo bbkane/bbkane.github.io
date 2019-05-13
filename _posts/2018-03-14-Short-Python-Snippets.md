@@ -183,3 +183,16 @@ Date formatting can get complicated, and the format specifiers can be hard to re
 
 Then when you run the function, it opens an interactive console at that line and you can play with defined variables directly. Once you have something you like, you can remove that code and use what you made in it's place. This can also be handy when debugging and you want to inspect variables (though also check out `pdb`).
 
+## HTTP GET with `urllib`
+
+Sometimes you just want to `GET` a URL and you don't want to install `requests`. `urllib` is confusing, but here's how I do that for simple cases:
+
+```python
+import urllib.request
+
+with urllib.request.urlopen('http://python.org/') as response:
+   content = response.read()
+   return_code = response.getcode()
+   headers = response.info()
+```
+
