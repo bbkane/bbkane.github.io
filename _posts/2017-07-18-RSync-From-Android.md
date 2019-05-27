@@ -48,3 +48,46 @@ When messing with a  filling filesystem on Android, I like to use the following 
 ```bash
 du -ax ./* | sort -k1,1n | tail -n30
 ```
+
+## Notes from `man rsync`
+
+```
+# Notes From `man rsync`
+# ---
+## rsync slashes on folder names
+
+#   rsync -avz foo:src/bar/ /data/tmp
+
+# A  trailing slash on the source changes this behavior to avoid creating an additional
+# directory level at the destination.  You can think of a trailing /  on  a  source  as
+# meaning  "copy  the  contents of this directory" as opposed to "copy the directory by
+# name", but in both cases the attributes of the containing directory  are  transferred
+# to  the containing directory on the destination.  In other words, each of the follow-
+# ing commands copies the files in  the  same  way,  including  their  setting  of  the
+# attributes of /dest/foo:
+
+#   rsync -av /src/foo /dest
+#   rsync -av /src/foo/ /dest/foo
+
+## rsync --archive notes:
+
+#         -a, --archive               archive mode; same as -rlptgoD (no -H)
+#         -r, --recursive             recurse into directories
+#         -l, --links                 copy symlinks as symlinks
+#         -p, --perms                 preserve permissions
+#         -t, --times                 preserve times
+#         -g, --group                 preserve group
+#         -o, --owner                 preserve owner (super-user only)
+#         -D                          same as --devices --specials
+#         --devices
+#               This  option  causes rsync to transfer character and block device files to the
+#               remote system to recreate these devices.  This option has  no  effect  if  the
+#               receiving rsync is not run as the super-user and --super is not specified.
+
+
+#         --specials
+#               This  option  causes rsync to transfer special files such as named sockets and
+#               fifos.
+
+# ---
+```
