@@ -34,24 +34,32 @@ logger = logging.getLogger(__name__)
 
 
 def setup_global_logging(
-        log_dir: str = 'logs',
-        loggers=[logger, logging.getLogger(__package__)],
-        level=logging.INFO,
-        global_level=None):
+    log_dir: str = "logs",
+    loggers=[logging.getLogger("__main__"), logging.getLogger(__package__)],
+    level=logging.INFO,
+    global_level=None,
+    stream_level=logging.INFO,
+):
     """Set up basic logging to stderr and a log directory
 
-    Use global_level to change levels on ALL logging
-    loggers defaults to this module's logger and this module's package's logger
+    loggers: defaults to this module's logger and this module's package's logger
+    level: level to log your code (as defined by `loggers` parameter). Defaults to logging.INFO
+    global_level: change levels on logging not included in `loggers` (including 3rd party libaries). It defaults to logging.ERROR.
+    stream_level: change level of stderr logging specifically (so it can ignore more verbose logging going to a file)
+
     See `logging.Logger.manager.loggerDict` for a list of all loggers
     """
     log_dir = Path(log_dir)
     log_dir.mkdir(parents=True, exist_ok=True)
-    logname = log_dir / datetime.now().strftime('%Y-%m-%d.%H.%M.%S.log')
+    logname = log_dir / datetime.datetime.now().strftime("%Y-%m-%d.%H.%M.%S.log")
+
+    stream_handler = logging.StreamHandler()
+    stream_handler.setLevel(stream_level)
 
     logging.basicConfig(
-        format='# %(asctime)s %(levelname)s %(name)s %(filename)s:%(lineno)s\n%(message)s',
+        format="# %(asctime)s %(levelname)s %(name)s %(filename)s:%(lineno)s\n%(message)s\n",
         level=global_level,
-        handlers=(logging.StreamHandler(), logging.FileHandler(logname),)
+        handlers=(stream_handler, logging.FileHandler(logname)),
     )
 
     if loggers is not None:
