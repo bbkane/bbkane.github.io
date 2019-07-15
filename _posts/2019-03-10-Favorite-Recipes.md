@@ -274,3 +274,33 @@ Combine remaining ingredients. Pour over cuke mixture. Heat just to a boil. Pack
 
 *Betty Holdsworth*
 
+# Grandma Howe's Best-Ever Strawberry Rhubarb Pie
+
+This *Better Homes and Gardens* recipe can be found [here](https://www.bhg.com/recipe/best-ever-strawberry-rhubarb-pie/).
+
+Pie Tips:
+- Buying a crust is a lot easier than making one
+
+# Grandma Howe's Perfect Rhubarb Pie
+
+This *Taste of Home* recipe can be found [here](https://www.tasteofhome.com/recipes/perfect-rhubarb-pie/).
+
+# Grandma Howe's Pie Toppings
+
+Grandma Howe gave me these recipes specifically for the toppings (not the whole dessert). She likes to mix and match pies and toppings.
+
+- [Strawberry Rhubarb Streusel Pie](https://www.familycircle.com/recipe/pies/strawberry-rhubarb-streusel-pie/)
+- [Cranberry Cheese Crumb Pie](https://www.tasteofhome.com/recipes/cranberry-cheese-crumb-pie/)
+- [Sour Cream Peach Pecan Pie](https://www.tasteofhome.com/recipes/sour-cream-peach-pecan-pie/)
+- [Apple Pie with Oat Crumb Topping](https://www.theredheadbaker.com/apple-pie-with-oat-crumble-topping/)
+- Crumbly Apple Pie
+
+... rest of dessert recipe
+
+### Topping
+
+- 3/4 cup firmly packed dark brown sugar
+- 3/4 cup all-purpose flour
+- 1/3 cup chilled butter, cut into small pieces
+
+6. To prepare topping, in a small bowl, mix together brown sugar, flour, and nutmeg. Using a pastry blender or two knives, cut butter into brown sugar mixture until coarse crumbs form. Sprinkle apples evenly with topping.
