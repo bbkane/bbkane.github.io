@@ -304,3 +304,7 @@ Grandma Howe gave me these recipes specifically for the toppings (not the whole 
 - 1/3 cup chilled butter, cut into small pieces
 
 6. To prepare topping, in a small bowl, mix together brown sugar, flour, and nutmeg. Using a pastry blender or two knives, cut butter into brown sugar mixture until coarse crumbs form. Sprinkle apples evenly with topping.
+
+# Grandma Howe's Potica
+
+This is such an important and large recipe that I put it in [it's own blog post](https://www.bbkane.com/2018/07/10/Grandma-Howe's-Povitica-Recipe.html).
