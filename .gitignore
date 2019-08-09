@@ -1,5 +1,6 @@
 _site/
 # I'm going to use /tmp just to get markdown feedback every time I save
-tmp/
+tmp*
+*.swp
 
 .jekyll-metadata

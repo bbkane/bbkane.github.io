@@ -5,23 +5,23 @@ title: My Favorite things in Arkansas
 
 Some of my favorite things in Arkansas:
 
-TODO: Make links nicer, add pics
+TODO: add pics
 
 ## Food
 
-- Maddie's Place (great steak) - https://goo.gl/maps/tTdxBEg7daQG4q1WA
-- Lindsey's Hospitality House - BBQ! - https://g.page/Lindseybbq?share
-- Corky's Ribs & BBQ - Dry ribs, extra dry rub - https://goo.gl/maps/VNqdW3eydJn3Xu4B9
-- Eat My Catfish - great for crawfish when in season - https://goo.gl/maps/xxWbY7hpyLuiMTMc8
-- Whole Hog Cafe - BBQ, great ribs - https://goo.gl/maps/YSQT6rcXMUcNrjG38
+- [Maddie's Place](https://goo.gl/maps/tTdxBEg7daQG4q1WA) - gret steak
+- [Lindsey's Hospitality House](https://g.page/Lindseybbq?share) - BBQ!
+- [Corky's Ribs & BBQ](https://goo.gl/maps/VNqdW3eydJn3Xu4B9) - Dry ribs, extra dry rub
+- [Eat My Catfish](https://goo.gl/maps/xxWbY7hpyLuiMTMc8) - great for crawfish when in season
+- [Whole Hog Cafe](https://goo.gl/maps/YSQT6rcXMUcNrjG38) - BBQ, great ribs
 
 ## Parks
 
-- Big Dam Bridge - https://goo.gl/maps/6MtWDYdDvre6ydws6
-- Emerald Park - https://goo.gl/maps/ETnkZhNiC9gnJyTP6
-- Riverview Park - explore the bottom of the canyon at Emerald Park - https://goo.gl/maps/mYYxk3WcEouypAze7
-- Greer's Ferry - swimming, cliff jumping - https://goo.gl/maps/3ivV3QCAeKEXnujK9
-- Petit Jean State Park - waterfalls and hikes - https://goo.gl/maps/Snf2r8YA43zbSejJ9
-- Grinder's Ferry - swimming, floating down the Buffalo River - https://goo.gl/maps/RZAXfwmCGbBWT29W9
-- Hemmed-In Hollow Falls - quite a drive, quite a hike, and when there's water, quite a view! - https://goo.gl/maps/GkAu6kUryd1SxpPE7
+- [Big Dam Bridge](https://goo.gl/maps/6MtWDYdDvre6ydws6) - They light this up a night. It's a great place for a walk or run.
+- [Emerald Park](https://goo.gl/maps/ETnkZhNiC9gnJyTP6) - See a quarry canyon from above.
+- [Riverview Park](https://goo.gl/maps/mYYxk3WcEouypAze7) - explore the bottom of the canyon at Emerald Park
+- [Greer's Ferry](https://goo.gl/maps/3ivV3QCAeKEXnujK9) - swimming, cliff jumping
+- [Petit Jean State Park](https://goo.gl/maps/Snf2r8YA43zbSejJ9) - waterfalls and hikes
+- [Grinder's Ferry](https://goo.gl/maps/RZAXfwmCGbBWT29W9) - swimming, floating down the Buffalo River
+- [Hemmed-In Hollow Falls](https://goo.gl/maps/GkAu6kUryd1SxpPE7) - quite a drive, quite a hike, and when there's water, quite a view!
 
