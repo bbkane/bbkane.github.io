@@ -50,3 +50,8 @@ These are from various places and may be misremembered.
 - Your work shapes your tools and your tools shape your work
 - There that scattereth and yet increaseth
 - The worker is worthy of his wages.
+- Every line of code is a business decision
+- Ten hours of coding can save one hour of reading.
+- People with responsibilities have lives with meaning
+- Use threads if you want to work in parallel, async if you want to wait in parallel
+- Poeple remember and make time for the things that are important to them. What is important to you?
