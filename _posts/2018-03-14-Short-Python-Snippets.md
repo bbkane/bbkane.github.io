@@ -102,6 +102,14 @@ if __name__ == "__main__":
     main()
 ```
 
+For subcommands, I prefer to `subparsers = parser.add_subparsers(dest="subparser_name", required=True)`, then add the commands to the new parser: `subcommand1 = subparsers.add_parser('name', help='I need help')`. This command can take arguments: `subcommand1.add_argument('name', ...)`, and you can easily parse it with code like the following:
+
+```python
+
+if args.subparser_name == 'subcommand`':
+    ... # tada!
+```
+
 ## Zipping Files
 
 The `shutil.make_archive` function is a bit hard to use. Here's my notes on it and some code to erase partially zipped files on exceptions. This function works well with `pathlib.Path`.
