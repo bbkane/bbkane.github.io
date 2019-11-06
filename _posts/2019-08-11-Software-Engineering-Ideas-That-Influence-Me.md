@@ -77,28 +77,40 @@ imperative code with plain old data types.
   be elegant" daydreams. Code is to solve a problem, and most of the harder
   problems are best solved mathmatically and simply transcribed as code.
 - [The Architecture of Open Source Applications](http://www.aosabook.org/en/index.html):
-	a couple of free online books about the architecture of existing oplications.
-	I've read parts of it, but I really need to read it in it's entirety.
+  a couple of free online books about the architecture of existing oplications.
+  I've read parts of it, but I really need to read it in it's entirety.
 - [Safe and Efficient, Now](http://okmij.org/ftp/Computation/lightweight-static-guarantees.html):
-	This site talks about how to use the type system to protect against invalid
-	data. I particularly like the "DirtyString" example - using a separate type to
-	represent untrusted data, along with a function that validates it and returns a
-	validated version of the type. You can design your other functions to simply
-	take an instance of the validated type, and be confident that their already
-	validated!
-- [Using Rust For Game Development](https://www.youtube.com/watch?v=aKLntZcp27M) and [Is There More to Game Architecture than ECS?](https://www.youtube.com/watch?v=aKLntZcp27M) are examples of programming patterns that fall out of the somewhat extreme needs video game designs impose on their architects. I haven't tried these architectures but I really liked these talks.
+  This site talks about how to use the type system to protect against invalid
+  data. I particularly like the "DirtyString" example - using a separate type
+  to represent untrusted data, along with a function that validates it and
+  returns a validated version of the type. You can design your other functions
+  to simply take an instance of the validated type, and be confident that their
+  already validated!
+- [Using Rust For Game Development](https://www.youtube.com/watch?v=aKLntZcp27M),
+  [Is There More to Game Architecture than ECS?](https://www.youtube.com/watch?v=aKLntZcp27M),
+  [SIMD at Insomniac Games: How We Do the Shuffle](https://www.gdcvault.com/play/1022248/SIMD-at-Insomniac-Games-How),
+  and  [Parallelizing the Naughty Dog Engine Using Fibers](https://www.gdcvault.com/play/1022186/Parallelizing-the-Naughty-Dog-Engine)
+  are examples of programming patterns that fall out of the somewhat extreme
+  needs video game designs impose on their architects. I haven't tried these
+  architectures but I really liked these talks.
 
 ### Examples
 
 These are libraries that have really impressed me with their usability;
-whatever they're doing, I want to emulate!
+whatever they're doing, I want to emulate it!
 
-TODO: add links
-
-- Python's pathlib library - easily my preferred way to work with paths. Most
-  (all?) methods returns a new instance instead of mutating.
-- Python's requests library - lots of hooks, provides easy and advanced ways to
-  use it (TODO: make a blog post about this).
-- SQLite3 - runs everywhere, insanely good docs, very useful
-- Go's kingpin library - fluent-style; fairly terse.
+- Python's [pathlib](https://docs.python.org/3/library/pathlib.html) library -
+  `pathlib` is easily my preferred way to work with paths. Most (all?) methods
+  returns a new instance instead of mutating.
+- Python's [requests](https://3.python-requests.org/) library - `requests`
+  optimizes for the common case (making a single HTTP request), but provides
+  mechanisms for TCP connection reuse, auto-adding headers, authorization, and
+  many other conveniences for dealing with HTTP.
+- [SQLite3](https://www.sqlite.org/index.html) - SQLite3 runs everywhere, has
+  insanely good docs, and is so useful it might be [the most used library in the
+  world](https://www.sqlite.org/mostdeployed.html).
+- Go's [kingpin](https://github.com/alecthomas/kingpin) library - `kingpin`
+  provides a relatively simple way to parse command line arguments for Go
+  programs. It exposes a powerful yet readable fluent-style API that makes it
+  fairly easy to do what you want to do.
 

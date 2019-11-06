@@ -204,3 +204,29 @@ with urllib.request.urlopen('http://python.org/') as response:
    headers = response.info()
 ```
 
+## Converting a list of namedtuples to .csv
+
+Python's `collections.namedtuple / typing.NamedTuple` library interacts really
+nicely with the `csv` module. Check this out:
+
+```python
+import csv
+import sys
+import typing
+
+class Student(typing.NamedTuple):
+    first_name: str
+    last_name: str
+    age: int
+
+
+students = [
+    Student("Bob", "Smith", 10),
+    Student("Rachel", "Kilkenny", 14),
+    Student("Martin", "Gonzalez", 16),
+]
+
+writer = csv.DictWriter(sys.stdout, fieldnames=Student._fields)
+writer.writeheader()
+writer.writerows([s._asdict() for s in students])
+```
