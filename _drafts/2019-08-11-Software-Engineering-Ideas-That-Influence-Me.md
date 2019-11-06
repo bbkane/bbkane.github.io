@@ -5,7 +5,7 @@ title: Software Engineering Ideas That Influence Me
 
 I watch a lot of conference talks on YouTube and I read a lot of software
 engineering articles. Some of that media has really helped me become a better
-engineer. As a relatively young engineer, I know my style will develop further and
+engineer. As a relative newcomer to engineering, I know my style will develop further and
 my current judgment of "best practice" will change (and I can see how it's
 changed historically by looking at my old code), but I plan to read/watch these
 resources every year. I look forward to future me gaining new perspective on
