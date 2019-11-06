@@ -86,6 +86,7 @@ imperative code with plain old data types.
 	validated version of the type. You can design your other functions to simply
 	take an instance of the validated type, and be confident that their already
 	validated!
+- [Using Rust For Game Development](https://www.youtube.com/watch?v=aKLntZcp27M) and [Is There More to Game Architecture than ECS?](https://www.youtube.com/watch?v=aKLntZcp27M) are examples of programming patterns that fall out of the somewhat extreme needs video game designs impose on their architects. I haven't tried these architectures but I really liked these talks.
 
 ### Examples
 
