@@ -31,7 +31,7 @@ fullpath() {
 }
 ```
 
-## Expand a BASH command
+## Print a BASH command
 
 This snippet prints the command before running it. Stolen from [StackOverflow](https://stackoverflow.com/a/19226038). Great for debugging!
 
@@ -121,3 +121,36 @@ learn_elm() {
     elm reactor
 }
 ```
+
+## Simple Task Runner
+
+For when you want to run some long commands with a shortcut. It does very limited arg parsing.
+
+```bash
+set +u
+if [ -z ${1+x} ]; then
+    cat << EOF
+Workflow:
+    $0 first|1
+    $0 second|2
+EOF
+fi
+set -u
+
+first() {
+    echo "I'm first"
+}
+
+second() {
+    echo "I'm second!"
+}
+
+case "$1" in
+    first|1)
+        first
+    ;;
+    second|2)
+        second
+    ;;
+esac
+```bash
