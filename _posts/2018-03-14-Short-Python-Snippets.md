@@ -198,11 +198,14 @@ Sometimes you just want to `GET` a URL and you don't want to install `requests`.
 ```python
 import urllib.request
 
-with urllib.request.urlopen('http://python.org/') as response:
-   content = response.read()
-   return_code = response.getcode()
-   headers = response.info()
+headers = {"Content-Type": "application/json"}
+req = urllib.request.Request("https://api.com/api", headers=headers)
+with urllib.request.urlopen(req) as resp:
+    content = resp.read()
+    return_code = resp.getcode()
+    headers = resp.info()
 ```
+
 
 ## Converting a list of namedtuples to .csv
 
