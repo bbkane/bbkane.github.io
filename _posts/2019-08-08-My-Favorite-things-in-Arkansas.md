@@ -9,7 +9,7 @@ TODO: add pics
 
 ## Food
 
-- [Maddie's Place](https://goo.gl/maps/tTdxBEg7daQG4q1WA) - gret steak
+- [Maddie's Place](https://goo.gl/maps/tTdxBEg7daQG4q1WA) - great steak
 - [Lindsey's Hospitality House](https://g.page/Lindseybbq?share) - BBQ!
 - [Corky's Ribs & BBQ](https://goo.gl/maps/VNqdW3eydJn3Xu4B9) - Dry ribs, extra dry rub
 - [Eat My Catfish](https://goo.gl/maps/xxWbY7hpyLuiMTMc8) - great for crawfish when in season

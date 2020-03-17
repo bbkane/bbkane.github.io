@@ -31,7 +31,7 @@ fullpath() {
 }
 ```
 
-## Expand a BASH command
+## Print a BASH command
 
 This snippet prints the command before running it. Stolen from [StackOverflow](https://stackoverflow.com/a/19226038). Great for debugging!
 
@@ -120,4 +120,54 @@ learn_elm() {
     # Run the blocking command
     elm reactor
 }
+```
+
+## Simple Task Runner
+
+For when you want to run some long commands with a shortcut. It does very limited arg parsing.
+
+```bash
+print_help(){
+    cat << EOF
+Workflow:
+    $0 first|1
+    $0 second|2
+EOF
+}
+
+first() {
+    echo "I'm first"
+}
+
+second() {
+    echo "I'm second!"
+}
+
+set +u
+if [ -z ${1+x} ]; then
+    print_help
+fi
+set -u
+
+case "$1" in
+    first|1)
+        first
+    ;;
+    second|2)
+        second
+    ;;
+    *)
+        echo "Unmatched command: $1"
+        print_help
+    ;;
+esac
+```
+
+## Tee `stderr` and `stdout`to files
+
+Save both `stderr` and `stdout` to a file. Only works in Bash. From StackOverflow
+
+```bash
+# https://stackoverflow.com/a/59435204
+{ { time ./tmp_import.sh | tee tmp_import_log.stdout;} 3>&1 1>&2 2>&3- | tee tmp_import_log.stderr;} 3>&1 1>&2 2>&3-
 ```
