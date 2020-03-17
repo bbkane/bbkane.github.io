@@ -102,11 +102,11 @@ if __name__ == "__main__":
     main()
 ```
 
-For subcommands, I prefer to `subparsers = parser.add_subparsers(dest="subparser_name", required=True)`, then add the commands to the new parser: `subcommand1 = subparsers.add_parser('name', help='I need help')`. This command can take arguments: `subcommand1.add_argument('name', ...)`, and you can easily parse it with code like the following:
+For subcommands, I prefer to put something like `subcommands = parser.add_subparsers(dest="subcommand_name", required=True)` in `parse_args`, then add the commands to the new parser: `subcommand1 = subcommands.add_parser('name', help='I need help')`. This command can take arguments: `subcommand1.add_argument('name', ...)`, and you can easily parse it with code like the following in `main`:
 
 ```python
 
-if args.subparser_name == 'subcommand`':
+if args.subcommand_name == 'name':
     ... # tada!
 ```
 
