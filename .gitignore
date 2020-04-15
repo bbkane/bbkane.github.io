@@ -1,6 +1,5 @@
-_site/
-# I'm going to use /tmp just to get markdown feedback every time I save
-tmp*
 *.swp
-
+.DS_Store
 .jekyll-metadata
+_site/
+tmp*

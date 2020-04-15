@@ -102,13 +102,13 @@ def main():
         post_title = args.post_name[:-3]  # remove the .md extension
     else:
         if not args.post_name:
-            args.post_name = input("Enter the name of your post to create: ")
+            args.post_name = input("Enter post name: ")
         # jekyllify filename and create with layout info
         today = args.date
         post_title = today + '-' + args.post_name.replace(' ', '-')
         post_path = p_join(post_dir, post_title + '.md')
         if not os.path.isfile(post_path):
-            print('Creating new blog:', post_path)
+            print('Creating new post:', post_path)
             with open(post_path, 'w') as post:
                 write = lambda s: print(s, file=post) # flake8: noqa
                 write('---')
