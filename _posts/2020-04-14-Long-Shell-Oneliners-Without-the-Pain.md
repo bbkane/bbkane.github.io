@@ -31,5 +31,7 @@ This is much easier to edit!
 
 ## See it in action!
 
+Side note: check out my `zsh` customizations [here](https://github.com/bbkane/dotfiles/tree/master/zsh)
+
 ![]({{ site.baseurl }}/img/2020-04-14-Long-Shell-Oneliners-Without-the-Pain/oneline-edit.2.gif)
 
