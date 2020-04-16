@@ -35,3 +35,6 @@ As a side note, check out my `zsh` customizations [here](https://github.com/bbka
 
 ![]({{ site.baseurl }}/img/2020-04-14-Long-Shell-Oneliners-Without-the-Pain/oneline-edit.2.gif)
 
+## Comments
+
+This really took off on Reddit. Feel free to add a [comment there](https://www.reddit.com/r/vim/comments/g1lx7e/i_made_a_command_to_autoformat_shell_commands/)!
