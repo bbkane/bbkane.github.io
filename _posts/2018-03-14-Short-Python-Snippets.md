@@ -56,7 +56,7 @@ This code is for shorter one file scripts that need command line arguments with
 the [argparse](https://docs.python.org/3/library/argparse.html) library.
 
 ```python
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 import argparse
