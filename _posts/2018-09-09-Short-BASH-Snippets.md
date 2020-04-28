@@ -171,3 +171,13 @@ Save both `stderr` and `stdout` to a file. Only works in Bash. From StackOverflo
 # https://stackoverflow.com/a/59435204
 { { time ./tmp_import.sh | tee tmp_import_log.stdout;} 3>&1 1>&2 2>&3- | tee tmp_import_log.stderr;} 3>&1 1>&2 2>&3-
 ```
+
+## Process easch line on a file
+
+From [Unix StackExchange](https://unix.stackexchange.com/a/580545/185953):
+
+```bash
+while IFS='' read -r LINE || [ -n "${LINE}" ]; do
+    echo "processing line: ${LINE}"
+done < /path/to/input/file.txt
+```
