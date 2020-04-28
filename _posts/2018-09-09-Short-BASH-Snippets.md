@@ -177,7 +177,7 @@ Save both `stderr` and `stdout` to a file. Only works in Bash. From StackOverflo
 From [Unix StackExchange](https://unix.stackexchange.com/a/580545/185953):
 
 ```bash
-while IFS='' read -r LINE || [ -n "${LINE}" ]; do
-    echo "processing line: ${LINE}"
-done < /path/to/input/file.txt
+while IFS='' read -r line || [ -n "${line}" ]; do
+    echo "processing line: ${line}"
+done < ./file.txt
 ```
