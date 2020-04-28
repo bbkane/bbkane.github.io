@@ -172,7 +172,7 @@ Save both `stderr` and `stdout` to a file. Only works in Bash. From StackOverflo
 { { time ./tmp_import.sh | tee tmp_import_log.stdout;} 3>&1 1>&2 2>&3- | tee tmp_import_log.stderr;} 3>&1 1>&2 2>&3-
 ```
 
-## Process easch line on a file
+## Process each line on a file
 
 From [Unix StackExchange](https://unix.stackexchange.com/a/580545/185953):
 
