@@ -174,10 +174,12 @@ Save both `stderr` and `stdout` to a file. Only works in Bash. From StackOverflo
 
 ## Process each line on a file
 
-From [Unix StackExchange](https://unix.stackexchange.com/a/580545/185953):
+From [Unix StackExchange](https://unix.stackexchange.com/a/580545/185953). I like to combine it with printing the command used.
 
 ```bash
 while IFS='' read -r line || [ -n "${line}" ]; do
-    echo "processing line: ${line}"
+    set -x
+    echo "$line"
+    { set +x; } 2>/dev/null
 done < ./file.txt
 ```
