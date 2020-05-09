@@ -95,7 +95,6 @@ def parse_args(*args, **kwargs):
 
 def main():
     args = parse_args()
-    # do real work
 
 
 if __name__ == "__main__":
