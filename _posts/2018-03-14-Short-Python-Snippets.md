@@ -95,6 +95,8 @@ def parse_args(*args, **kwargs):
 
 def main():
     args = parse_args()
+    with args.infile:
+        pass
 
 
 if __name__ == "__main__":
