@@ -55,3 +55,5 @@ These are from various places and may be misremembered.
 - People with responsibilities have lives with meaning
 - Use threads if you want to work in parallel, async if you want to wait in parallel
 - Poeple remember and make time for the things that are important to them. What is important to you?
+- Men's lives are measured in works, not years! - a probably misremembered quote like this in Westminster Cathedral
+- If you don't make mistakes, you're not working on hard enough problems. - Frank Wilczek
