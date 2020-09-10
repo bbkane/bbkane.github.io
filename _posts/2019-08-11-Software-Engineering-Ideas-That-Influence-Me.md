@@ -114,3 +114,4 @@ whatever they're doing, I want to emulate it!
   programs. It exposes a powerful yet readable fluent-style API that makes it
   fairly easy to do what you want to do.
 
+TODO: add blurbs about `trio`, `httpx`, `FastAPI`
