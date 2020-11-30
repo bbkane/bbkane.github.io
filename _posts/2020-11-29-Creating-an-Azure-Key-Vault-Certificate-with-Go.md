@@ -26,7 +26,7 @@ az login \
 ```
 
 ```
-az keyvault show -n concert-eaus2-dev-kv -g concert-eaus2-dev-rg
+az keyvault show -n avengers-keyvault -g avengers-keyvault-rg
 ```
 
 ### With Go code
