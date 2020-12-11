@@ -5,12 +5,10 @@ title: Bible Verses About Charity
 
 These are some of my favorite verses about love.
 
-TODO: elaborate, link to verses.
-
 Proverbs 3:5-12
 
 <details>
-  <summary>Click to expand</summary>
+  <summary>> Proverbs 3:5-12</summary>
   whatever
 </details>
 
