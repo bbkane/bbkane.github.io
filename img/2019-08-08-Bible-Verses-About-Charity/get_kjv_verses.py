@@ -36,7 +36,7 @@ with open("verses.txt") as fp, open("output.md", "w") as ofp:
         output = template.format(
             verse_ref=obj["reference"],
             verse_ref_url=verse_ref_url,
-            content=obj["text"],
+            content=obj["text"].strip(),
         )
         print(output, file=ofp)
         time.sleep(0.5)

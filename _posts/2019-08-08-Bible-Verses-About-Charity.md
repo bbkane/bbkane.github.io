@@ -20,11 +20,9 @@ For whom the LORD loveth he correcteth; even as a father the son
 in whom he delighteth.
 
 
-
 ## [Proverbs 10:12](https://www.bible.com/bible/1/PRO.10.KJV)
 
 Hatred stirreth up strifes: but love covereth all sins.
-
 
 
 ## [Proverbs 12:1](https://www.bible.com/bible/1/PRO.12.KJV)
@@ -33,11 +31,9 @@ Whoso loveth instruction loveth knowledge: but he that hateth reproof
 is brutish.
 
 
-
 ## [Proverbs 13:24](https://www.bible.com/bible/1/PRO.13.KJV)
 
 He that spareth his rod hateth his son: but he that loveth him chasteneth him betimes.
-
 
 
 ## [Proverbs 15:17](https://www.bible.com/bible/1/PRO.15.KJV)
@@ -46,10 +42,9 @@ Better
 is a dinner of herbs where love is, than a stalled ox and hatred therewith.
 
 
-
 ## [Matthew 5:43-48](https://www.bible.com/bible/1/MAT.5.KJV)
 
-          Ye have heard that it hath been said, Thou shalt love thy neighbour, and hate thine enemy.
+Ye have heard that it hath been said, Thou shalt love thy neighbour, and hate thine enemy.
 But I say unto you, Love your enemies, bless them that curse you, do good to them that hate you, and pray for them which despitefully use you, and persecute you;
 That ye may be the children of your Father which is in heaven: for he maketh his sun to rise on the evil and on the good, and sendeth rain on the just and on the unjust.
 For if ye love them which love you, what reward have ye? do not even the publicans the same?
@@ -70,10 +65,9 @@ is like unto it, Thou shalt love thy neighbour as thyself.
 On these two commandments hang all the law and the prophets.
 
 
-
 ## [Luke 6:27-35](https://www.bible.com/bible/1/LUK.6.KJV)
 
-          But I say unto you which hear, Love your enemies, do good to them which hate you,
+But I say unto you which hear, Love your enemies, do good to them which hate you,
 Bless them that curse you, and pray for them which despitefully use you.
 And unto him that smiteth thee on the
 one cheek offer also the other; and him that taketh away thy cloke forbid not
@@ -89,7 +83,6 @@ But love ye your enemies, and do good, and lend, hoping for nothing again; and y
 to the evil.
 
 
-
 ## [John 13:34-35](https://www.bible.com/bible/1/JHN.13.KJV)
 
 A new commandment I give unto you, That ye love one another; as I have loved you, that ye also love one another.
@@ -99,8 +92,7 @@ men know that ye are my disciples, if ye have love one to another.
 
 ## [John 14:15](https://www.bible.com/bible/1/JHN.14.KJV)
 
-          If ye love me, keep my commandments.
-
+If ye love me, keep my commandments.
 
 
 ## [John 15:9-20](https://www.bible.com/bible/1/JHN.15.KJV)
@@ -122,7 +114,6 @@ If ye were of the world, the world would love his own: but because ye are not of
 Remember the word that I said unto you, The servant is not greater than his lord. If they have persecuted me, they will also persecute you; if they have kept my saying, they will keep yours also.
 
 
-
 ## [Romans 8:35-39](https://www.bible.com/bible/1/ROM.8.KJV)
 
 Who shall separate us from the love of Christ?
@@ -133,13 +124,11 @@ For I am persuaded, that neither death, nor life, nor angels, nor principalities
 Nor height, nor depth, nor any other creature, shall be able to separate us from the love of God, which is in Christ Jesus our Lord.
 
 
-
 ## [Romans 12:9-11](https://www.bible.com/bible/1/ROM.12.KJV)
 
-          Let love be without dissimulation. Abhor that which is evil; cleave to that which is good.
+Let love be without dissimulation. Abhor that which is evil; cleave to that which is good.
 Be kindly affectioned one to another with brotherly love; in honour preferring one another;
 Not slothful in business; fervent in spirit; serving the Lord;
-
 
 
 ## [Romans 13:7-10](https://www.bible.com/bible/1/ROM.13.KJV)
@@ -154,8 +143,7 @@ Love worketh no ill to his neighbour: therefore love
 is the fulfilling of the law.
 
 
-
-## [1 Corinthians 13,14](https://www.bible.com/bible/1/1CO.13.KJV)
+## [1 Corinthians 13](https://www.bible.com/bible/1/1CO.13.KJV)
 
 Though I speak with the tongues of men and of angels, and have not charity, I am become
 as
@@ -179,6 +167,10 @@ When I was a child, I spake as a child, I understood as a child, I thought as a 
 For now we see through a glass, darkly; but then face to face: now I know in part; but then shall I know even as also I am known.
 And now abideth faith, hope, charity, these three; but the greatest of these
 is charity.
+
+
+## [1 Corinthians 14](https://www.bible.com/bible/1/1CO.14.KJV)
+
 Follow after charity, and desire spiritual
 gifts, but rather that ye may prophesy.
 For he that speaketh in an
@@ -248,7 +240,6 @@ Wherefore, brethren, covet to prophesy, and forbid not to speak with tongues.
 Let all things be done decently and in order.
 
 
-
 ## [Galatians 5:13-26](https://www.bible.com/bible/1/GAL.5.KJV)
 
 For, brethren, ye have been called unto liberty; only
@@ -273,7 +264,6 @@ If we live in the Spirit, let us also walk in the Spirit.
 Let us not be desirous of vain glory, provoking one another, envying one another.
 
 
-
 ## [Ephesians 5:21-28](https://www.bible.com/bible/1/EPH.5.KJV)
 
 Submitting yourselves one to another in the fear of God.
@@ -288,9 +278,7 @@ That he might present it to himself a glorious church, not having spot, or wrink
 So ought men to love their wives as their own bodies. He that loveth his wife loveth himself.
 
 
-
 ## [1 Peter 4:8](https://www.bible.com/bible/1/1PE.4.KJV)
 
 And above all things have fervent charity among yourselves: for charity shall cover the multitude of sins.
-
 
