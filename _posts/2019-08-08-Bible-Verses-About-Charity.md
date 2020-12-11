@@ -10,7 +10,7 @@ Once I got my verses, I generated the below blog with [this script]({{ site.base
 ## [Proverbs 3:5-12](https://www.bible.com/bible/1/PRO.3.KJV)
 
 <details>
-  <summary>Proverbs 3:5-12</summary>
+  <summary>**Click me to read verses inline**</summary>
   Trust in the LORD with all thine heart; and lean not unto thine own understanding.
 In all thy ways acknowledge him, and he shall direct thy paths.
 Be not wise in thine own eyes: fear the LORD, and depart from evil.
@@ -26,7 +26,7 @@ in whom he delighteth.
 ## [Proverbs 10:12](https://www.bible.com/bible/1/PRO.10.KJV)
 
 <details>
-  <summary>Proverbs 10:12</summary>
+  <summary>**Click me to read verses inline**</summary>
   Hatred stirreth up strifes: but love covereth all sins.
 </details>
 
@@ -34,7 +34,7 @@ in whom he delighteth.
 ## [Proverbs 12:1](https://www.bible.com/bible/1/PRO.12.KJV)
 
 <details>
-  <summary>Proverbs 12:1</summary>
+  <summary>**Click me to read verses inline**</summary>
   Whoso loveth instruction loveth knowledge: but he that hateth reproof
 is brutish.
 </details>
@@ -43,7 +43,7 @@ is brutish.
 ## [Proverbs 13:24](https://www.bible.com/bible/1/PRO.13.KJV)
 
 <details>
-  <summary>Proverbs 13:24</summary>
+  <summary>**Click me to read verses inline**</summary>
   He that spareth his rod hateth his son: but he that loveth him chasteneth him betimes.
 </details>
 
@@ -51,7 +51,7 @@ is brutish.
 ## [Proverbs 15:17](https://www.bible.com/bible/1/PRO.15.KJV)
 
 <details>
-  <summary>Proverbs 15:17</summary>
+  <summary>**Click me to read verses inline**</summary>
   Better
 is a dinner of herbs where love is, than a stalled ox and hatred therewith.
 </details>
@@ -60,7 +60,7 @@ is a dinner of herbs where love is, than a stalled ox and hatred therewith.
 ## [Matthew 5:43-48](https://www.bible.com/bible/1/MAT.5.KJV)
 
 <details>
-  <summary>Matthew 5:43-48</summary>
+  <summary>**Click me to read verses inline**</summary>
             Ye have heard that it hath been said, Thou shalt love thy neighbour, and hate thine enemy.
 But I say unto you, Love your enemies, bless them that curse you, do good to them that hate you, and pray for them which despitefully use you, and persecute you;
 That ye may be the children of your Father which is in heaven: for he maketh his sun to rise on the evil and on the good, and sendeth rain on the just and on the unjust.
@@ -73,7 +73,7 @@ Be ye therefore perfect, even as your Father which is in heaven is perfect.</det
 ## [Matthew 22:36-40](https://www.bible.com/bible/1/MAT.22.KJV)
 
 <details>
-  <summary>Matthew 22:36-40</summary>
+  <summary>**Click me to read verses inline**</summary>
   Master, which
 is the great commandment in the law?
 Jesus said unto him,
@@ -88,7 +88,7 @@ On these two commandments hang all the law and the prophets.
 ## [Luke 6:27-35](https://www.bible.com/bible/1/LUK.6.KJV)
 
 <details>
-  <summary>Luke 6:27-35</summary>
+  <summary>**Click me to read verses inline**</summary>
             But I say unto you which hear, Love your enemies, do good to them which hate you,
 Bless them that curse you, and pray for them which despitefully use you.
 And unto him that smiteth thee on the
@@ -109,7 +109,7 @@ to the evil.
 ## [John 13:34-35](https://www.bible.com/bible/1/JHN.13.KJV)
 
 <details>
-  <summary>John 13:34-35</summary>
+  <summary>**Click me to read verses inline**</summary>
   A new commandment I give unto you, That ye love one another; as I have loved you, that ye also love one another.
 By this shall all
 men know that ye are my disciples, if ye have love one to another.</details>
@@ -118,7 +118,7 @@ men know that ye are my disciples, if ye have love one to another.</details>
 ## [John 14:15](https://www.bible.com/bible/1/JHN.14.KJV)
 
 <details>
-  <summary>John 14:15</summary>
+  <summary>**Click me to read verses inline**</summary>
             If ye love me, keep my commandments.
 </details>
 
@@ -126,7 +126,7 @@ men know that ye are my disciples, if ye have love one to another.</details>
 ## [John 15:9-20](https://www.bible.com/bible/1/JHN.15.KJV)
 
 <details>
-  <summary>John 15:9-20</summary>
+  <summary>**Click me to read verses inline**</summary>
   As the Father hath loved me, so have I loved you: continue ye in my love.
 If ye keep my commandments, ye shall abide in my love; even as I have kept my Father’s commandments, and abide in his love.
 These things have I spoken unto you, that my joy might remain in you, and
@@ -148,7 +148,7 @@ Remember the word that I said unto you, The servant is not greater than his lord
 ## [Romans 8:35-39](https://www.bible.com/bible/1/ROM.8.KJV)
 
 <details>
-  <summary>Romans 8:35-39</summary>
+  <summary>**Click me to read verses inline**</summary>
   Who shall separate us from the love of Christ?
 shall tribulation, or distress, or persecution, or famine, or nakedness, or peril, or sword?
 As it is written, For thy sake we are killed all the day long; we are accounted as sheep for the slaughter.
@@ -161,7 +161,7 @@ Nor height, nor depth, nor any other creature, shall be able to separate us from
 ## [Romans 12:9-11](https://www.bible.com/bible/1/ROM.12.KJV)
 
 <details>
-  <summary>Romans 12:9-11</summary>
+  <summary>**Click me to read verses inline**</summary>
             Let love be without dissimulation. Abhor that which is evil; cleave to that which is good.
 Be kindly affectioned one to another with brotherly love; in honour preferring one another;
 Not slothful in business; fervent in spirit; serving the Lord;
@@ -171,7 +171,7 @@ Not slothful in business; fervent in spirit; serving the Lord;
 ## [Romans 13:7-10](https://www.bible.com/bible/1/ROM.13.KJV)
 
 <details>
-  <summary>Romans 13:7-10</summary>
+  <summary>**Click me to read verses inline**</summary>
   Render therefore to all their dues: tribute to whom tribute
 is due;
  custom to whom custom; fear to whom fear; honour to whom honour.
@@ -186,7 +186,7 @@ is the fulfilling of the law.
 ## [1 Corinthians 13,14](https://www.bible.com/bible/1/1CO.13.KJV)
 
 <details>
-  <summary>1 Corinthians 13,14</summary>
+  <summary>**Click me to read verses inline**</summary>
   Though I speak with the tongues of men and of angels, and have not charity, I am become
 as
 sounding brass, or a tinkling cymbal.
@@ -282,7 +282,7 @@ Let all things be done decently and in order.
 ## [Galatians 5:13-26](https://www.bible.com/bible/1/GAL.5.KJV)
 
 <details>
-  <summary>Galatians 5:13-26</summary>
+  <summary>**Click me to read verses inline**</summary>
   For, brethren, ye have been called unto liberty; only
 use
  not liberty for an occasion to the flesh, but by love serve one another.
@@ -309,7 +309,7 @@ Let us not be desirous of vain glory, provoking one another, envying one another
 ## [Ephesians 5:21-28](https://www.bible.com/bible/1/EPH.5.KJV)
 
 <details>
-  <summary>Ephesians 5:21-28</summary>
+  <summary>**Click me to read verses inline**</summary>
   Submitting yourselves one to another in the fear of God.
 Wives, submit yourselves unto your own husbands, as unto the Lord.
 For the husband is the head of the wife, even as Christ is the head of the church: and he is the saviour of the body.
@@ -326,7 +326,7 @@ So ought men to love their wives as their own bodies. He that loveth his wife lo
 ## [1 Peter 4:8](https://www.bible.com/bible/1/1PE.4.KJV)
 
 <details>
-  <summary>1 Peter 4:8</summary>
+  <summary>**Click me to read verses inline**</summary>
   And above all things have fervent charity among yourselves: for charity shall cover the multitude of sins.
 </details>
 
