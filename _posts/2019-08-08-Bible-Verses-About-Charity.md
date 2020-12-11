@@ -8,7 +8,7 @@ These are some of my favorite verses about love.
 Proverbs 3:5-12
 
 <details>
-  <summary>> Proverbs 3:5-12</summary>
+  <summary>- Proverbs 3:5-12</summary>
   whatever
 </details>
 
