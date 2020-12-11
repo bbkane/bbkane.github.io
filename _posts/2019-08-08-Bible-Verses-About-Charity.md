@@ -3,11 +3,11 @@ layout: default
 title: Bible Verses About Charity
 ---
 
-These are some of my favorite verses about love.
+These are some of my favorite verses about love. Click the header to link and the text to expand. All verses are in the King James Version (KJV) of the Bible.
 
-Proverbs 3:5-12
+## Proverbs 3:5-12
 
-- <details>
+<details>
   <summary>Proverbs 3:5-12</summary>
   whatever
 </details>
