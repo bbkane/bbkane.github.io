@@ -9,9 +9,7 @@ import urllib.request
 template = """
 ## [{verse_ref}]({verse_ref_url})
 
-<details>
-  <summary>{verse_ref}</summary>
-  {content}</details>
+{content}
 """
 
 
