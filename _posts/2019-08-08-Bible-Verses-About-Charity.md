@@ -9,6 +9,11 @@ TODO: elaborate, link to verses.
 
 Proverbs 3:5-12
 
+<details>
+  <summary>Click to expand</summary>
+  whatever
+</details>
+
 Proverbs 10:12
 
 Proverbs 12:1
