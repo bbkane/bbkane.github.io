@@ -57,3 +57,4 @@ These are from various places and may be misremembered.
 - Poeple remember and make time for the things that are important to them. What is important to you?
 - Men's lives are measured in works, not years! - a probably misremembered quote like this in Westminster Cathedral
 - If you don't make mistakes, you're not working on hard enough problems. - Frank Wilczek
+- The goal of refactoring is to increase the number of constraints that guide your program through your problem space. - paraphrased from [Jonathon Blow](https://www.youtube.com/watch?v=2J-HIh3kXCQ)
