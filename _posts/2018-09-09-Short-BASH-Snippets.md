@@ -183,3 +183,11 @@ while IFS='' read -r line || [ -n "${line}" ]; do
     { set +x; } 2>/dev/null
 done < ./file.txt
 ```
+
+You can also pipe lines to the while loop:
+
+```bash
+pbpaste | while IFS='' read -r line || [ -n "${line}" ]; do
+    echo "line: $line"
+done
+```
