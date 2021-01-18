@@ -20,7 +20,7 @@ java \
     -jar ~/Downloads/schemaspy-6.1.0.jar \
     -t mysql \
     -dp ~/Downloads/mysql-connector-java-8.0.22/mysql-connector-java-8.0.22.jar \
-    -connprops tmp.properties \
+    -connprops serverTimezone\\=UTC \
     -host concert-mysqlsrv-dev-weus2.mysql.database.azure.com \
     -port 3306 \
     -s concert_mysql_dev_weus2 \
@@ -33,4 +33,4 @@ java \
 
 ## Notes
 
-You're supposed to be able to pass `-connprops` options as part of the flag, but I couldn't make that work for me. The `-s` flag refers to `schema` and for MySQL, that's just the database. The `-vizjs` flag means I don't have to install `graphviz`.
+The `-connprops` argument needs two backslashes because I'm in `zsh` where I need to escape a backslash. The `-s` flag refers to `schema` and for MySQL, that's just the database. The `-vizjs` flag means I don't have to install `graphviz`.
