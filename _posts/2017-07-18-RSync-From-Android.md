@@ -91,3 +91,19 @@ du -ax ./* | sort -k1,1n | tail -n30
 
 # ---
 ```
+
+# Rclone
+
+I don't want to make a new blog post for this, but here's a good way to use `rclone` to copy files. Also see the [docs](https://rclone.org/commands/rclone_copy/).
+
+```
+rclone \
+    --dry-run \
+    --progress \
+    --log-level DEBUG \
+    --log-file ~/tmp_rclone.log.json \
+    --use-json-log \
+    copy \
+    ~/tmp bbkane_onedrive:/tmp
+```
+
