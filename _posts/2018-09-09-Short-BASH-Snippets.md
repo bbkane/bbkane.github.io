@@ -191,3 +191,14 @@ pbpaste | while IFS='' read -r line || [ -n "${line}" ]; do
     echo "line: $line"
 done
 ```
+
+## Iterating inline arrays in `Zsh`
+
+Not a Bash snippet, but useful nonetheless :) . From [SuperUser](https://superuser.com/a/877181/643441)
+
+```
+for d (www.linkedin.com www.reddit.com www.google.com) {
+    dig +short +noshort "$d"
+}
+```
+
