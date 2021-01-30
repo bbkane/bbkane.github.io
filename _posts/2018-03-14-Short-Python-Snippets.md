@@ -197,14 +197,22 @@ Then when you run the function, it opens an interactive console at that line and
 Sometimes you just want to `GET` a URL and you don't want to install `requests`. `urllib` is confusing, but here's how I do that for simple cases:
 
 ```python
+import json
 import urllib.request
 
 headers = {"Content-Type": "application/json"}
 req = urllib.request.Request("https://api.com/api", headers=headers)
 with urllib.request.urlopen(req) as resp:
+    # guess UTF-8 if no encoding found
+    encoding = resp.info().get_content_charset("utf-8")
     content = resp.read()
     return_code = resp.getcode()
     headers = resp.info()
+    
+    if return_code != 200:
+        raise ValueError(f"Error for fqdn: {fqdn}")
+
+    json_data = json.loads(content.decode(encoding))
 ```
 
 
