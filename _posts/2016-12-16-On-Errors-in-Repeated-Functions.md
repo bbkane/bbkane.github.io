@@ -5,7 +5,7 @@ title: On Errors in Repeated Functions
 
 Recently I found myself parsing several similar XML files in Python. The XML
 had a deeply nested structure I wanted to get stuff out of, which means using
-Python's [`xml.etree.ElementTree`'s]() `find` and `findall` methods:
+Python's [`xml.etree.ElementTree`'s](https://docs.python.org/3/library/xml.etree.elementtree.html) `find` and `findall` methods:
 
 ```python
 for entry in root.find('this').find('this2').findall('entry'):
@@ -119,4 +119,3 @@ Rust also has a [monadic approach](http://www.codethatgrows.com/lessons-learned-
 After I read/watch this stuff again, I'll probably be ashamed of this post, but until then, it's up :)
 
 Update: I still find this useful for some things, but XML handling is best handled by XSLT! Use XSLT!
-

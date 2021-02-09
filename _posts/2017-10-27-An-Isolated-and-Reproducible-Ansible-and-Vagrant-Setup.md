@@ -113,7 +113,7 @@ and then kill when we screw them up too badly.
 
 ## Launch a small VM network
 
-At this point, we've installed all the programs we need to. The rest of this is creating the right files and running commands. I've created a [GitHub repo]() with the appropriate files and minimal instructions to get the network up and running.
+At this point, we've installed all the programs we need to. The rest of this is creating the right files and running commands. 
 
 ```bash
 mkdir -p ~/Code/Vagrant/small_network
