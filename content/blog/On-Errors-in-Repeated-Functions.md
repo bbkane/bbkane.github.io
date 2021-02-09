@@ -1,7 +1,7 @@
 +++
 title = "On Errors in Repeated Functions"
 date = 2016-12-16
-updated = 2017-07-31
+updated = 2021-02-08
 aliases = [ "2016/12/16/On-Errors-in-Repeated-Functions.html" ]
 +++
 

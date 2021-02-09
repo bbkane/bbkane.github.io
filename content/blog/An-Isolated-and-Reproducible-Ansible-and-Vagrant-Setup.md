@@ -1,7 +1,7 @@
 +++
 title = "An Isolated and Reproducible Ansible and Vagrant Setup on Mac"
 date = 2017-10-27
-updated = 2018-03-09
+updated = 2021-02-08
 aliases = [ "2017/10/27/An-Isolated-and-Reproducible-Ansible-and-Vagrant-Setup.html" ]
 +++
 

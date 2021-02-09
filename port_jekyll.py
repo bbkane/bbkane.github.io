@@ -34,7 +34,7 @@ def parse_args(*args, **kwargs):
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
 
     parser.add_argument("--src_base_dir", default="~/Git/bbkane.github.io")
-    parser.add_argument("--dst_base_dir", default="~/Code/Zola/www.bbkane.com")
+    parser.add_argument("--dst_base_dir", default="~/Git/bbkane.github.io-zola")
 
     return parser.parse_args(*args, **kwargs)
 
