@@ -1,0 +1,31 @@
+# The URL the site will be built for
+base_url = "https://www.bbkane.com"
+title = "Ben's Corner"
+generate_feed = true
+minify_html = true
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = true
+
+theme = "terminimal"
+
+[markdown]
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+
+[extra]
+# Put all your custom variables here
+
+author = "Benjamin Kane"
+logo_text = "Ben's Corner"
+menu_items = [
+    {name = "archive", url = "$BASE_URL/archive"},
+    {name = "about me", url = "$BASE_URL/about"},
+    {name = "github", url = "https://github.com/bbkane", newtab = true},
+    {name = "linkedin", url = "https://www.linkedin.com/in/benjamin-kane", newtab = true},
+    {name = "stackoverflow", url = "https://stackoverflow.com/users/2958070/ben", newtab = true},
+]
