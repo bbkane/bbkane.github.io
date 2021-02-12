@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Career Engineering: Tracking Work Faster With Command Line Jira
+title: Career Engineering By Tracking Work Faster With Command Line Jira
 ---
 
 Thank you Matt Doar and Josiah Bradley for reviewing this post.
