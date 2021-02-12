@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+<!-- https://www.getzola.org/documentation/templates/overview/ -->
+<!-- page.html - applied: all pages - vars: page vars -->
+
+{% block content %}
+<h1 class="title">
+  {{ page.title }}
+</h1>
+<p class="subtitle"><strong>{{ page.date }}</strong></p>
+{{ page.content | safe }}
+{% endblock content %}

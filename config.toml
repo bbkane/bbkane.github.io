@@ -2,15 +2,13 @@
 base_url = "https://www.bbkane.com"
 title = "Ben's Corner"
 generate_feed = true
-minify_html = true
+minify_html = false
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
-
-theme = "terminimal"
 
 [markdown]
 # Whether to do syntax highlighting
