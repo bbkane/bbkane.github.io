@@ -1,0 +1,63 @@
+// ---
+// ---
+
+// The name of the game here is to overwrite stuff from https://github.com/pages-themes/midnight/blob/master/_sass/jekyll-theme-midnight.scss
+// with the settings I want
+
+@import "jekyll-theme-midnight";
+
+// That actually imports pygments highlighters, so I'm going to have to import my own under it to overwrite that
+// For performance, I'm actually just going to <link> to it in the layout
+// Actually, because this is generated at build time, I don't think import would hurt at runtime
+// (modulo browser caching)
+
+// TODO: change to percent if it doesn't break stuff
+$blog-max-width: 800px;
+
+// https://github.com/pages-themes/midnight/blob/master/_sass/jekyll-theme-midnight.scss#L227
+section {
+    // bbkane: Don't need his margin because I'm getting rid of the View On Github thing
+    max-width: $blog-max-width;
+    margin-top: 0
+}
+
+.wrapper {
+    max-width: $blog-max-width;
+}
+
+nav {
+    max-width: $blog-max-width;
+}
+
+// // I don't actually like this...
+// $content-body-padding: $blog-max-width * 0.02;
+// .content-body {
+//     padding-left: $content-body-padding;
+//     padding-right: $content-body-padding;
+//     border-left: 1px solid white;
+//     border-right: 1px solid white;
+// }
+
+
+// It's time for some color swaps to make this look better!
+$orangey-red: #f46242;
+$darky-blue: rgb(4, 6, 35);
+$lighty-yellow: rgb(232, 212, 157);
+$lighty-grey:  rgb(182, 182, 182);
+
+a {
+    color: $orangey-red;
+}
+
+body {
+    background: $darky-blue;
+    // default text color
+    color: $lighty-grey;
+    // make the font slightly bigger than the default
+    font: 16px/1.5 "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: $lighty-yellow;
+}
+

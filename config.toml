@@ -1,5 +1,6 @@
 # The URL the site will be built for
-base_url = "https://www.bbkane.com"
+# TODO: should the base_url start with https:??
+base_url = "www.bbkane.com/public"
 title = "Ben's Corner"
 generate_feed = true
 minify_html = false
@@ -18,12 +19,18 @@ highlight_code = true
 [extra]
 # Put all your custom variables here
 
-author = "Benjamin Kane"
-logo_text = "Ben's Corner"
-menu_items = [
-    {name = "archive", url = "$BASE_URL/archive"},
-    {name = "about me", url = "$BASE_URL/about"},
-    {name = "github", url = "https://github.com/bbkane", newtab = true},
-    {name = "linkedin", url = "https://www.linkedin.com/in/benjamin-kane", newtab = true},
-    {name = "stackoverflow", url = "https://stackoverflow.com/users/2958070/ben", newtab = true},
-]
+github_url = "https://github.com/bbkane"
+google_analytics = "UA-89444199-1"
+linkedin_url = "https://www.linkedin.com/in/benjamin-kane"
+site_github_repo_url = "https://github.com/bbkane/bbkane.github.io"
+stackoverflow_url = "https://stackoverflow.com/users/2958070/ben"
+
+# author = "Benjamin Kane"
+# logo_text = "Ben's Corner"
+# menu_items = [
+#     {name = "archive", url = "$BASE_URL/archive"},
+#     {name = "about me", url = "$BASE_URL/about"},
+#     {name = "github", url = "https://github.com/bbkane", newtab = true},
+#     {name = "linkedin", url = "https://www.linkedin.com/in/benjamin-kane", newtab = true},
+#     {name = "stackoverflow", url = "https://stackoverflow.com/users/2958070/ben", newtab = true},
+# ]

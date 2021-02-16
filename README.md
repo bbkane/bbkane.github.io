@@ -2,6 +2,7 @@ from staticsite.md
 
 # TODO
 
+- Why does zola serve work but zola build not?
 - port mds - done
 - get empty links filled `/\[.*\]()` - done
 - get content truncated in index
@@ -15,3 +16,9 @@ from staticsite.md
 - Get search working
 - get about me page
 - get word count
+
+# Strategy for template/index.html
+
+1. inline base.html
+2. start copying from bbkane default.html!
+3. Copy from midnight css/whatever as needed
