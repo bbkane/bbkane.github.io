@@ -1,7 +1,7 @@
 +++
-title = "Career Engineering: Tracking Work Faster With Command Line Jira"
+title = "Career Engineering By Tracking Work Faster With Command Line Jira"
 date = 2021-01-30
-updated = 2021-01-30
+updated = 2021-02-11
 aliases = [ "2021/01/30/Career-Engineering-By-Tracking-Work-Faster-With-Command-Line-Jira.html" ]
 +++
 

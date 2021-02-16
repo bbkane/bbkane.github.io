@@ -2,23 +2,22 @@ from staticsite.md
 
 # TODO
 
-- Why does zola serve work but zola build not?
-- port mds - done
-- get empty links filled `/\[.*\]()` - done
-- get content truncated in index
-- get code blocks not one-liners
-- port images from old blog
+- Sort by updated not working??
 - make sure all vars work on old blog
-- get root page working
-- Get Google Site-Analytics working
+- port images from old blog 
+- Why does zola serve work but zola build not?
+- Is code CSS not working anymore? It looks like it's using a zola built-in one. Rm the original CSS
 - Get "view page source"
 - TELL PEOPLE TO EMAIL ME IF THEY LIKE MY BLOG POSTS!!
 - Get search working
-- get about me page
-- get word count
+- get about me page - can probably just use the root page for this...
 
-# Strategy for template/index.html
+# Done
 
-1. inline base.html
-2. start copying from bbkane default.html!
-3. Copy from midnight css/whatever as needed
+- get word count - done
+- port mds - done
+- Get Google Site-Analytics working - done
+- get root page working - done
+- get code blocks not one-liners - done
+- get content truncated in index - done
+- get empty links filled `/\[.*\]()` - done
