@@ -3,4 +3,4 @@ title = "Ben's Corner"
 template = "index.html"
 +++
 
-hi there
+See the [blog](./blog).
