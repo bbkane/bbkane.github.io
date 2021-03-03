@@ -2,10 +2,7 @@ from staticsite.md
 
 # TODO
 
-- figure out how to use images. Test site? See https://www.getzola.org/documentation/content/overview/#asset-colocation
-- make sure all vars work on old blog- all of them are for the `{{ site.baseurl }}/path/to/image`
-- Is code CSS not working anymore? It looks like it's using a zola built-in one. Rm the original CSS
-- Get "view page source"
+- Get "view page source" on GitHub
 - TELL PEOPLE TO EMAIL ME IF THEY LIKE MY BLOG POSTS!!
 - Get search working
 - turn root page into about me and link to blog
@@ -22,6 +19,9 @@ from staticsite.md
 - get empty links filled `/\[.*\]()` - done
 - Sort by updated not working?? - made https://github.com/getzola/zola/issues/1384 to try to get this supported
 - Why does zola serve work but zola build not? - HTML expects a root. Building and starting a local server in that directory fixes this.
+- figure out how to use images. Test site? See https://www.getzola.org/documentation/content/overview/#asset-colocation
+- make sure all vars work on old blog- all of them are for the `{{ site.baseurl }}/path/to/image`
+- Is code CSS not working anymore? It looks like it's using a zola built-in one. Rm the original CSS
 
 # Image porting notes
 
