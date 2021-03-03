@@ -2,11 +2,8 @@ from staticsite.md
 
 # TODO
 
-- Get "view page source" on GitHub
-- TELL PEOPLE TO EMAIL ME IF THEY LIKE MY BLOG POSTS!!
-- Get search working
+- Get "view page source" on GitHub - see https://tera.netlify.app/docs/#macros for macros
 - turn root page into about me and link to blog
-- port /img/favicon/... images (not sure where they're needed?)
 
 # Done
 
@@ -22,12 +19,9 @@ from staticsite.md
 - figure out how to use images. Test site? See https://www.getzola.org/documentation/content/overview/#asset-colocation
 - make sure all vars work on old blog- all of them are for the `{{ site.baseurl }}/path/to/image`
 - Is code CSS not working anymore? It looks like it's using a zola built-in one. Rm the original CSS
+- port /img/favicon/... images (not sure where they're needed?)
 
-# Image porting notes
+# TODO later
 
-- Test image!! - done and works fine
-- go through directories in /img/
-- get blog file names (rm date) and cp img directory with the new name into blog/
-- mv blog/post_name.md into /blog/post_name/index.md
-
-Use sed or something to fix up the regex
+- Get search working
+- TELL PEOPLE TO EMAIL ME IF THEY LIKE MY BLOG POSTS!!
