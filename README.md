@@ -3,6 +3,8 @@ from staticsite.md
 # TODO
 
 - turn root page into about me and link to blog
+- switch from zola branch to master branch in netlify, update config.toml with www instead of zola and push...
+- get zola instead of master - see https://stackoverflow.com/a/2862938/2958070
 
 # Done
 
@@ -23,7 +25,9 @@ from staticsite.md
 
 # TODO later
 
-- Get search working
+- Get search working (put in home page)
+- RSS feed
+- Site analytics - https://github.com/piratepx/app
 - TELL PEOPLE TO EMAIL ME IF THEY LIKE MY BLOG POSTS!!
 - Get "view page source" on GitHub - see https://tera.netlify.app/docs/#macros for macros
 
