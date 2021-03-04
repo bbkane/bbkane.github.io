@@ -1,6 +1,5 @@
 # The URL the site will be built for
-# TODO: should the base_url start with https:??
-base_url = "zola.bbkane.com"
+base_url = "https://zola.bbkane.com/"
 title = "Ben's Corner"
 generate_feed = true
 minify_html = false
