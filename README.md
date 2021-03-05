@@ -36,6 +36,8 @@ from staticsite.md
 Get "view page source" on GitHub - see https://tera.netlify.app/docs/#macros for macros
 I want to be able to add links to edit pages on GitHub
 
+I can use page.relative_path for this! https://www.getzola.org/documentation/templates/pages-sections/
+
 root:
     http://127.0.0.1:1111/
     ./content/_index.md
