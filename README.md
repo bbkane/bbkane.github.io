@@ -1,4 +1,8 @@
-# Ben's Corner
+# Moved to https://github.com/bbkane/www.bbkane.com/
+
+I migrated away from Jekyll to Zola because I couldn't install the GitHub Pages gem locally and from GitHub Pages to Netlify so I didn't have to store generated HTML within the repo.
+
+## Ben's Corner
 
 My blog
 
