@@ -2,6 +2,8 @@
 
 I migrated away from Jekyll to Zola because I couldn't install the GitHub Pages gem locally and from GitHub Pages to Netlify so I didn't have to store generated HTML within the repo.
 
+All pages here now redirect to there, via a new _layouts/default.html page.
+
 ## Ben's Corner
 
 My blog
